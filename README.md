@@ -1,1 +1,3 @@
 # Skysite-lightweight
+
+Initial step
