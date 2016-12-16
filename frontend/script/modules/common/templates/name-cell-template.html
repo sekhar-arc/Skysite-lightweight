@@ -1,0 +1,14 @@
+<div class="ui-grid-cell-contents custom-contents-style">
+    <div class="ui-grid-extension">
+        {{ row.entity.OriginalExtension | extensionFilter}}
+    </div>
+    <div class="ui-grid-name">
+        <div>{{ COL_FIELD }}</div>
+        <div class="ui-grid-version">
+            v{{row.entity.RevisionNumber}}.0
+        </div>
+        <div class="ui-grid-size">
+            {{row.entity.Filesize | bytes}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="container login-container">
+    <div class="row" id="pwd-container">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <section class="login-form">
+                <form method="post" role="login" name="login" ng-submit="vm.doLogin()">
+                    <div show-errors class="form-group" ng-class="{ 'has-error': login.email.$invalid }">
+                        <input type="email" name="email" placeholder="Email" ng-required class=" input-lg form-control" ng-model="vm.user.email" />
+                    </div>
+                    <div show-errors class="form-group" ng-class="{ 'has-error': login.password.$invalid }">
+                        <input name="password" type="password" class="input-lg form-control" id="password" placeholder="Password" ng-required ng-model="vm.user.password" />
+                    </div>
+                    <div class="form-group">
+                        <input name="remember" id="remember" type="checkbox" ng-model="vm.remember" />
+                        <label class="remember-padding" for="remember">Remember me</label>
+                    </div>
+                    <button type="submit" name="go" class="btn btn-lg btn-primary btn-block submit-btn">Sign in</button>
+                </form>
+            </section>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>

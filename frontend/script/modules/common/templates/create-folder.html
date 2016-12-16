@@ -1,0 +1,14 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Create New Folder</h3>
+</div>
+<form ng-submit="vm.save()">
+    <div class="modal-body" id="modal-body">
+        <div class="form-group">
+            <input type="text" class="form-control" id="name" ng-model="vm.name" placeholder="Folder Name">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button ng-disabled="vm.preventSubmit || !vm.name.length" class="btn btn-primary" type="submit">Save</button>
+        <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+    </div>
+</form>

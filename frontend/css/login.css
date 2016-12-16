@@ -1,0 +1,16 @@
+.login-container .login-form {
+    margin-top: 50px;
+}
+
+.login-container .login-form input {
+    margin-bottom: 10px;
+}
+
+.login-container .login-form .submit-btn {
+    margin-top: 20px;
+}
+
+.login-container label.remember-padding {
+    padding-left: 8px;
+    vertical-align: middle;
+}

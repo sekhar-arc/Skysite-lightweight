@@ -1,0 +1,25 @@
+<div class="theme-step2-container" ng-init='vm.init()'>
+    <div class="step2-top-section">
+        <div class="col-sm-1 left-spacing-adjust height-100"></div>
+        <div class="col-sm-10 center-spacing-adjust height-100"></div>
+        <div class="col-sm-1 right-spacing-adjust height-100"></div>
+    </div>
+    <div class="step2-middle-section">
+        <div class="col-sm-1 left-panel-drop height-100"></div>
+        <div class="col-sm-10 center-main-panel height-100">
+            <div class="display-table">
+                <div class="display-table-cell">
+                    <p>Enter a name of your theme and save</p>
+                    <input class="theme-name" ng-model="vm.themeName" type="text" name="" placeholder="Enter Theme Name">
+                    <button ng-click="vm.saveDetails()" class="btn btn-primary save-btn" ng-disabled="vm.themeName.length==0">SAVE</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1 right-panel-drop height-100"></div>
+    </div>
+    <div class="step2-bottom-section">
+        <div class="col-sm-1 left-spacing-adjust height-100"></div>
+        <div class="col-sm-10 center-spacing-adjust height-100"></div>
+        <div class="col-sm-1 right-spacing-adjust height-100"></div>
+    </div>
+</div>

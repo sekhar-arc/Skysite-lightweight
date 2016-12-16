@@ -1,0 +1,14 @@
+ <div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Domain Name</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <form>
+        <div class="form-group">
+            <span>http:// </span><input type="text" class="form-control" id="name" ng-model="vm.name" placeholder="yourdomain" style="width: 250px;display: inline;"><span> .egnyte.com</span>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="vm.save()">Continue</button>
+    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Close</button>
+</div>

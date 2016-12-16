@@ -1,0 +1,34 @@
+'use strict';
+// var baseURL = "http://ec2-52-74-170-67.ap-southeast-1.compute.amazonaws.com:3000/api/v1";
+var baseURL = "https://pwservicestg1.planwellcollaborate.com/Web";
+// var baseURL2 = "http://192.168.0.73:8001/api/v1";
+//var baseURL2 = "http://192.168.0.57:8001/api/v1";
+ var baseURL2 = "/api/v1";
+
+module.exports = {
+    authenticate: baseURL + '/api/Authentication',
+    projectList: baseURL + '/api/Project',
+    folderDetails: baseURL + '/api/ProjectItem',
+    folder: baseURL + '/api/ProjectFolder',
+    folderList: baseURL + '/api/ProjectFolder',
+    projectDocument: baseURL + '/api/ProjectDocument',
+    customProperty: baseURL + '/api/CustomProperty',
+    customPropertyAttribute: baseURL + '/api/CustomPropertyAttribute',
+    customPropertyLookup: baseURL + '/api/Lookup',
+    createSession: baseURL + '/api/S3Upload/CreateSession',
+    generateUploadUrl: baseURL + 'api/S3Upload/GetUploadUrls',
+    createProject: baseURL + '/api/Project/Create',
+    editProject: baseURL + '/api/Project/Update',
+    location: baseURL + '/api/Location',
+    checkFirstLogin: baseURL2 + '/check-login',
+    getMasterTemplate: baseURL2 + '/get-master-template',
+    addCustomTemplate: baseURL2 + '/add-custom-template',
+    contactList: baseURL + '/api/Contact',
+    groupList: baseURL + '/api/Group',
+    groupMember: baseURL + '/api/GroupMember',
+    projectRole: baseURL + '/api/ProjectRole',
+    createContact: baseURL + '/api/Contact/Create',
+    createGroup: baseURL + '/api/Group/Create',
+    updateGroup: baseURL + '/api/Group/Update',
+    updateContact: baseURL + '/api/Contact/Update'
+}

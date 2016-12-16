@@ -1,0 +1,27 @@
+<div class="theme-main-container xcontainer-fluid">
+    <div class="common-header xrow">
+        <div class="col-xs-4">
+            <img class="logo-img" src="resources/theme/skysite-logo.png">
+        </div>
+        <div class="col-xs-4">
+        </div>
+        <div class="col-xs-4">
+            Dropdown
+        </div>
+    </div>
+    <div>
+        <div class="custom-template-breadcrumb" ng-if="$root.customTemplateStep">
+            <div class="pre-header-template hide">
+                Customize Theme
+            </div>
+            <ol class="breadcrumb">
+                <li ng-repeat="template in customTemplateBreadcrumb">
+                    <a ng-class="{'active': $root.customTemplateStep==($index+1)}" ng-click="vm.goToStep(template)">{{template.title}}</a>
+                </li>
+            </ol>
+        </div>
+        <div class="xcontainer">
+            <div ui-view></div>
+        </div>
+    </div>
+</div>

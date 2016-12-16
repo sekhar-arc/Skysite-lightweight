@@ -1,0 +1,471 @@
+<div class="container-fluide upload-module height-100" ng-init='init()' ng-keydown="keyDownFunc($event)">
+    <div class="general-upload-header row">
+        <div class="col-sm-6 text-left">
+        </div>
+        <div class="col-sm-6 text-right">
+            <div class="right-header-container">
+                View
+                <button class="grid-view-btn view-btn" ng-class="{'view-active': isGrid}" ng-click="isGrid = true">
+                </button>
+                <span class="ver-divider"> |
+
+                </span>
+                <button class="list-view-btn view-btn" ng-class="{'view-active': !isGrid}" ng-click="isGrid = false">
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="doc-container-outer">
+        <div class="panel panel-default doc-container upload">
+            <!-- <div class="panel-heading">
+            <i ng-click="toggleTreeView()" class="fa fa-sitemap show-left-directory fa-rotate-270" aria-hidden="true"></i>
+            <i class="fa fa-refresh header-btn" aria-hidden="true" ng-click="reloadData()"></i>
+            <div class="btn-group" uib-dropdown is-open="status.isopen">
+                <button id="single-button" type="button" class="btn btn-primary abn-header-btn" uib-dropdown-toggle ng-disabled="disabled">
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                </button>
+                <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                    <li role="menuitem" ng-click="reloadData()"><a>Reload</a></li>
+                    <li role="menuitem" ng-click="renameFolderFromTree()"><a>Rename Folder</a></li>
+                </ul>
+            </div>
+            <div class="btn-group pull-right" uib-dropdown is-open="options.isopen">
+                <button id="single-button" type="button" class="btn btn-primary abn-header-btn" uib-dropdown-toggle ng-disabled="disabled">
+                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                </button>
+                <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                    <li ng-if="breadcrumbList.length>1" role="menuitem" ng-click="copyFiles()"><a>Copy</a></li>
+                    <li ng-if="breadcrumbList.length>1 && copyFileList.length " role="menuitem"><a>Paste</a></li>
+                    <li ng-if="breadcrumbList.length>1" role="menuitem" ng-click="moveFiles()"><a>Move</a></li>
+                    <li ng-if="breadcrumbList.length>1" role="menuitem" ng-click="deleteFiles()"><a>Delete</a></li>
+                </ul>
+            </div>
+            <i class="fa pull-right header-btn" ng-class="{'fa-th-large': !isGrid, 'fa-list': isGrid}" aria-hidden="true" ng-click="toggleView('grid')"></i>
+            <button class="btn btn-primary pull-right margin-h-0103" ng-click='openCreateFolderModal()'>
+                <i class="fa fa-plus" aria-hidden="true"></i> &nbsp;Create Folder
+            </button>
+            <button ngf-select="" ng-model="ufile" ngf-multiple="true" class="btn btn-primary pull-right margin-h-0103" ng-change='show()' ng-show='parentFolderId'>
+                <i class="fa fa-plus" aria-hidden="true"></i> &nbsp;Upload Files
+            </button>
+            <div class="btn-group pull-right cloud-dropdown" uib-dropdown is-open="cloud.isopen">
+                <button id="" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+                    Select From Cloud &nbsp;<span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                    <li role="menuitem" ng-click="reloadData()">
+                        <a href="javascript:;" lk-google-picker on-picked="onPicked(docs)" on-loaded="onLoaded()" on-cancel="onCancel()"> <img src="./resources/drive.png"> &nbsp;<span class="lh-16">Google Drive</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" drop-box-picker dbpicker-files="files" on-picked="onPicked(docs)" on-cancel="onCancel()"><img src="./resources/dropbox.png"> &nbsp;<span class="lh-16">Dropbox</span> </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" box-picker boxpicker-files="files" on-picked="onPicked(docs)" on-cancel="onCancel()"><img src="./resources/box.png"> &nbsp;<span class="lh-16">Box</span> </a>
+                    </li>
+                    <li disabled>
+                        <a href="javascript:;" angular-one-drive-picker after-select="onPickedOneDrive" after-cancel="onCancel"><img src="./resources/onedrive.png"> &nbsp;<span class="lh-16">Onedrive</span> </a>
+                    </li>
+                    <li disabled>
+                        <a ng-click='openEgnyteModal()'><img src="./resources/egnyte.png"> &nbsp;<span class="lh-16">Egnyte</span> </a>
+                    </li>
+                </ul>
+            </div>
+            <button ng-if="moveCount" ng-click="dropMove()" class="btn btn-primary" type="button">
+                Paste here <span class="badge">{{moveCount}}</span>
+            </button>
+        </div> -->
+            <div class="panel-heading header">
+                <div class="folder-field">
+                    <span class="all-folder"> All Folders </span>
+                    <div class="tree-hid-btn" ng-click="toggleTreeView()">
+                        <img src="./resources/arrow-left.png">
+                    </div>
+                </div>
+                <div class="other-fields">
+                    <div class="current-folder-name field" ng-show='parentFolderId'>
+                        <i class="fa fa-folder-open-o"></i>
+                        <span ng-bind='currentDir.FolderName'></span>
+                    </div>
+                    <div class="sort-field field">
+                        <label class="field-label"> Sort by </label>
+                        <div class="btn-group" uib-dropdown is-open="status.isopenSort">
+                            <button type="button" class="btn" uib-dropdown-toggle ng-disabled="disabled">
+                                <span ng-bind="vm.sortOption.text"></span> <i class="caret"></i>
+                            </button>
+                            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                                <li role="menuitem" ng-repeat="option in vm.sortOptions" ng-click="vm.sortOption=option;vm.filterProjectList(option)">
+                                    <a href="" ng-bind="option.text"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="filter-field field">
+                        <button uib-tooltip="Show Filter Options" class="filter-btn">
+                            <img src="./resources/filter.png">
+                            <label class="field-label"> Show Filter</label>
+                        </button>
+                    </div>
+                    <div class="pull-right double-line">
+                        <div class="field button-group">
+                            <button uib-tooltip="Upload image" ngf-select="" ng-model="ufile" ngf-multiple="true" ng-change='show()' ng-show='parentFolderId'>
+                                <img src="./resources/upload_file.png">
+                            </button>
+                            <button uib-tooltip="Create Folder" ng-click='openCreateFolderModal()'>
+                                <img src="./resources/create-folder.png">
+                            </button>
+                            <button uib-tooltip="Information"><img src="./resources/i.png"></button>
+                            <button uib-tooltip="Custom view"><img src="./resources/create-view_hover.png"></button>
+                        </div>
+                        <div class="field pagination-field">
+                            <ul uib-pagination boundary-links="true" total-items="vm.totalCount||202" ng-model="vm.pageNo" items-per-page="vm.perPageItem.value" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" max-size='3' ng-change="vm.pageChanged()"></ul>
+                        </div>
+                        <div class="per-page-field field">
+                            <div class="btn-group" uib-dropdown is-open="status.isopenPerPage">
+                                <button id="single-button" type="button" class="btn" uib-dropdown-toggle ng-disabled="disabled">
+                                    <span ng-bind="vm.perPageItem.text"></span> <i class="caret"></i>
+                                </button>
+                                <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button" ng-model='vm.perPageItem'>
+                                    <li role="menuitem" ng-repeat='item in vm.perPageItemList' ng-click="vm.perPageItem=item;vm.changePerPageCount(item)">
+                                        <a href="" ng-bind="item.text"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body upload-viewer-container drop-zone" ngf-drop ng-model="ufile" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true" ngf-include-dir="true" xaccept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'" ng-change='show()' ng-class="{'dragover': !currentDir.folders.length && !currentDir.files.length}">
+                <!-- <ol class="breadcrumb" ng-class="{'directory-opened': toggleTree, 'directory-closed': !toggleTree}" xng-if='parentFolderId'>
+                <li ng-repeat='item in breadcrumbList track by $index' ng-class="{'active':($index===(breadcrumbList.length-1))}">
+                    <a href="" ng-if='$index!==(breadcrumbList.length-1)' ng-click="goToDir(item)">{{item.pathName}}</a>
+                    <span ng-if='$index===(breadcrumbList.length-1)'>{{item.pathName}}</span>
+                </li>
+            </ol> -->
+                <!-- <div class="drop-zone-show" ng-if='parentFolderId'>
+                </div> -->
+                <div class="directory" ng-class="{'show': toggleTree}">
+                    <abn-tree icon-leaf="fa fa-folder-o abn-leaf-node" icon-expand="fa fa-folder-o" icon-collapse="fa fa-folder-open-o" tree-control="myTree" drag-drop-enable="true"></abn-tree>
+                </div>
+                <div class="grid" ng-class="{'directory-opened': toggleTree, 'directory-closed': !toggleTree, 'hide-view': !isGrid}" context-menu="fileMenuOptions()">
+                    <!-- <ol class="breadcrumb" xng-if='parentFolderId'>
+                    <li ng-repeat='item in breadcrumbList track by $index' ng-class="{'active':($index===(breadcrumbList.length-1))}">
+                        <a href="" ng-if='$index!==(breadcrumbList.length-1)' ng-click="goToDir(item)">{{item.pathName}}</a>
+                        <span ng-if='$index===(breadcrumbList.length-1)'>{{item.pathName}}</span>
+                    </li>
+                    </ol> -->
+                    <!-- <xscrollable> -->
+                    <div class="folder-container hide">
+                        <div class="header" ng-show='currentDir.folders.length'>
+                            Folders
+                        </div>
+                        <div class="folders row" ng-show='currentDir.folders.length'>
+                            <div ng-drag-data="{data: showFolders, isFile: false}" ng-drag-start="startDrag()" ng-drag-stop="completeDrag()" ng-drag-success="completeDrag($data)" ng-drag="true" ng-drop="true" ng-drop-success="moveTo($data,$event,showFolders)" ng-repeat="showFolders in currentDir.folders track by $index" class="col-xs-6 col-sm-4 col-md-3 folder-view" context-menu="folderMenuOptions">
+                                <div class="thumbnail" ng-dblclick="changeCurrentDir(showFolders)">
+                                    <i class="fa fa-folder" aria-hidden="true"></i>
+                                    <div class="name">
+                                        {{showFolders.FolderName}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="file-container">
+                        <!-- <div class="header" ng-show='currentDir.files.length'>
+                            Files
+                        </div> -->
+                        <div class="files files-grid-view">
+                            <div class="file-grid-item upload-file-area" ngf-select="" ng-model="ufile" ngf-multiple="true" ng-change='show()' ng-show='parentFolderId'>
+                                <div class="upload-file text-center">
+                                    Upload File
+                                </div>
+                            </div>
+                            <div ng-show='currentDir.files.length' ng-drag-data="{data: showFile, isFile: true, from: 'right'}" ng-drag-start="startDrag(showFile, $index)" ng-drag-stop="completeDrag(showFile, $index)" ng-drag-success="completeDrag($data)" ng-drag="true" ng-drop="false" ng-repeat="showFile in currentDir.files" class="folder-view file-grid-item" context-menu="fileMenuOptions(showFile)" ng-click="selectFile(showFile, $index, $event)" draggable="false" ng-class="{'is-selected': showFile.isSelected}">
+                                <div class="thumbnail" style="background-image: url('./resources/files/sc2.jpg')" ng-class="{'has-image':showFile.chooseImage}">
+                                    <div class="top-triangle badge-wrap" style="border-top-color: #4a89f2">
+                                    </div>
+                                    <div class="top-triangle-adjust" style="border-top-color: #fff">
+                                    </div>
+                                    <div class="extension-display" style="color: #4a89f2">
+                                        {{showFile.OriginalExtension | extensionFilter}}
+                                    </div>
+                                    <div class="check-marker">
+                                        <input type="checkbox" ng-model="showFile.isSelected" ng-change="selectFile(showFile)">
+                                    </div>
+                                    <div class="thumbnail-footer">
+                                        <div class="name">
+                                            {{showFile.DocumentName}}
+                                        </div>
+                                        <div class="size">
+                                            {{showFile.Filesize | bytes}}
+                                        </div>
+                                    </div>
+                                    <div class="thumbnail-overlay">
+                                        <div class="overlay-name">
+                                            {{showFile.DocumentName}}
+                                        </div>
+                                        <div class="overlay-detail" ng-if="showFile.DocumentTitle">
+                                            <span class="title">
+                                                Title
+                                            </span>
+                                            <span class="title-value">
+                                                {{showFile.DocumentTitle}}
+                                            </span>
+                                        </div>
+                                        <div class="overlay-detail" ng-if="showFile.DocumentVendor">
+                                            <span class="title">
+                                                Vendor
+                                            </span>
+                                            <span class="title-value">
+                                                {{showFile.DocumentVendor}}
+                                            </span>
+                                        </div>
+                                        <div class="overlay-detail">
+                                            <span class="title">
+                                                Date
+                                            </span>
+                                            <span class="title-value">
+                                            {{showFile.RevisionDate | date:'dd-MMM-yyyy'}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div ng-drag-clone class="cloned-file-item">
+                                <div class="selected-message" ng-if="selectedCount>1">
+                                    {{selectedCount}} Files selected
+                                </div>
+                                <div class="selected-message" ng-if="selectedCount==1">
+                                    1 File selected
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!-- </xscrollable> -->
+                </div>
+                <div class="list" ng-class="{'directory-opened': toggleTree, 'directory-closed': !toggleTree, 'hide-view': isGrid}">
+                    <ol class="breadcrumb hide" xng-if='parentFolderId'>
+                        <li ng-repeat='item in breadcrumbList track by $index' ng-class="{'active':($index===(breadcrumbList.length-1))}" ng-drop="true" ng-drop-data="item" ng-drop-success="dropOnBreadcrumb($data, $event, item)">
+                            <a href="" ng-if='$index!==(breadcrumbList.length-1)' ng-click="goToDir(item)">{{item.pathName}}</a>
+                            <span ng-if='$index===(breadcrumbList.length-1)'>{{item.pathName}}</span>
+                        </li>
+                    </ol>
+                    <!-- <xscrollable> -->
+                    <div class="folder-container hide">
+                        <div class="header" ng-show='currentDir.folders.length'>
+                            Folders
+                        </div>
+                        <div class="folders" ng-show='currentDir.folders.length'>
+                            <div class="row folder-view folder-view-header margin-0">
+                                <div class="col-xs-7 name">
+                                    Name
+                                </div>
+                                <div class="col-xs-5 owner">
+                                    Created at
+                                </div>
+                            </div>
+                            <div ng-drag-data="{data: showFolders, isFile: false}" ng-drag-start="startDrag()" ng-drag-stop="completeDrag()" ng-drag-success="completeDrag($data)" ng-drag="true" ng-drop="true" ng-drop-success="moveTo($data,$event,showFolders)" class="row folder-view margin-0" ng-repeat="showFolders in currentDir.folders track by $index" ng-dblclick="changeCurrentDir(showFolders)" context-menu="folderMenuOptions">
+                                <div class="col-xs-7 name">
+                                    <i class="fa fa-folder" aria-hidden="true"></i> {{showFolders.FolderName}}
+                                </div>
+                                <div class="col-xs-5 owner">
+                                    {{showFolders.CreateDate | date:'MM/dd/yyyy @ h:mma'}}
+                                </div>
+                                <!-- <div class="col-xs-1 owner">
+                                    <div class="btn-group pull-right" uib-dropdown is-open="showFolders.isopen">
+                                        <button id="single-button" type="button" class="settings-btn" uib-dropdown-toggle ng-disabled="disabled">
+                                            <i class="fa fa-ellipsis-h"></i> </button>
+                                        <ul cclass="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                                            <li role="menuitem" ng-click='renameFloder(showFolders)'>
+                                                <a href="">
+                                                    <i class="fa fa-pencil-square"></i> Rename
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="file-container hide">
+                        <!--  <div class="header" ng-show='currentDir.files.length'>
+                            Files
+                        </div> -->
+                        <div class="files" ng-show='currentDir.files.length'>
+                            <div class="row table-header margin-0">
+                                <div class="col-xs-4 name">
+                                    <div class="underline-div"></div>
+                                    <span>File name</span>
+                                    <div class="btn-grp sort-btn">
+                                        <button class="fa fa-caret-up"></button>
+                                        <button class="fa fa-caret-down"></button>
+                                    </div>
+                                </div>
+                                <div class="col-xs-8 attributes">
+                                    <button class="abslt-btn prev-btn"><i class="fa fa-caret-left"></i></button>
+                                    <div class="underline-div border-color"></div>
+                                    <!-- <div> -->
+                                    <div class="row">
+                                        <div class="col-xs-3 type text-center">
+                                            <span>Rev.</span>
+                                            <div class="btn-grp sort-btn">
+                                                <button class="fa fa-caret-up"></button>
+                                                <button class="fa fa-caret-down"></button>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-3 owner">
+                                            <span>File Status</span>
+                                            <div class="btn-grp sort-btn">
+                                                <button class="fa fa-caret-up"></button>
+                                                <button class="fa fa-caret-down"></button>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-3 owner">
+                                            <span>Last Check-in</span>
+                                            <div class="btn-grp sort-btn">
+                                                <button class="fa fa-caret-up"></button>
+                                                <button class="fa fa-caret-down"></button>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-3 owner">
+                                            <span>File size</span>
+                                            <div class="btn-grp sort-btn">
+                                                <button class="fa fa-caret-up"></button>
+                                                <button class="fa fa-caret-down"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- </div> -->
+                                    <button class="abslt-btn nxt-btn"><i class="fa fa-caret-right"></i></button>
+                                </div>
+                            </div>
+                            <div ng-drag-data="{data: showFiles, isFile: true}" ng-drag-start="startDrag()" ng-drag-stop="completeDrag()" ng-drag-success="completeDrag($data)" ng-drag="true" ng-drop="false" class="row folder-view margin-0 table-body" ng-repeat="showFiles in currentDir.files track by $index" context-menu="fileMenuOptions">
+                                <div class="underline-div border-color"></div>
+                                <div class="col-xs-4 name">
+                                    <div class="initials color-{{showFiles.OriginalExtension|extensionFilter}}"><span>{{showFiles.OriginalExtension|extensionFilter}}</span></div>
+                                    <span>{{showFiles.DocumentName}}</span>
+                                </div>
+                                <div class="col-xs-8 attributes">
+                                    <div class="row">
+                                        <div class="col-xs-3 type text-center">
+                                            {{showFiles.RevisionNumber}}
+                                        </div>
+                                        <div class="col-xs-3 owner">
+                                        </div>
+                                        <div class="col-xs-3 owner">
+                                            {{showFiles.RevisionDate | date:'MM/dd/yyyy @ h:mma'}}
+                                        </div>
+                                        <div class="col-xs-3 owner">
+                                            {{showFiles.Filesize|bytes:2}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-xs-1 owner">
+                                    <div class="btn-group pull-right" uib-dropdown is-open="showFolders.isopen">
+                                        <button id="single-button" type="button" class="settings-btn" uib-dropdown-toggle ng-disabled="disabled">
+                                            <i class="fa fa-ellipsis-h"></i> </button>
+                                        <ul cclass="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                                            <li role="menuitem" ng-click='copyFile(showFiles)'>
+                                                <a href="">
+                                                    <i class="fa fa-files-o"></i> Copy
+                                                </a>
+                                            </li>
+                                            <li role="menuitem" ng-click='moveFile(showFiles)'>
+                                                <a href="">
+                                                    <i class="fa fa-arrow-right" aria-hidden="true"></i> Move
+                                                </a>
+                                            </li>
+                                            <li role="menuitem" ng-click='updateFile(showFiles)'>
+                                                <a href="">
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update
+                                                </a>
+                                            </li>
+                                            <li role="menuitem" ng-click='deleteFiles(showFiles)'>
+                                                <a href="">
+                                                    <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-if="currentDir.files.length>0" ui-if="gridOptions.data.length>0" id="customize-grid" ui-grid="gridOptions" class="file-list-view" ui-grid-resize-columns ui-grid-pinning ui-grid-auto-resize style="height: 100%"></div>
+                    <!-- <div ng-drag-clone class="cloned-file-item">
+                        <div class="selected-message" ng-if="selectedCount>1">
+                            {{selectedCount}} Files selected
+                        </div>
+                        <div class="selected-message" ng-if="selectedCount==1">
+                            1 File selected
+                        </div>
+                    </div> -->
+                    <!-- </xscrollable> -->
+                </div>
+                <div class="multiple-menu-btn-container" ng-if="breadcrumbList.length>1">
+                    <button class="btn main-menu-btn-ctrl" ng-click="toggleMainMenu()" ng-class="{'show-close-btn': showMainMenu}">
+                    </button>
+                    <div class="multiple-menu-btn-inner" ng-if="showMainMenu">
+                        <button uib-tooltip="Cut" class="btn cut-btn multiple-menu-btn" ng-click="moveFiles()"></button>
+                        <button uib-tooltip="Copy" class="btn copy-btn multiple-menu-btn" ng-click="copyFiles()"></button>
+                        <button uib-tooltip="Edit Attributes" class="btn edit-btn multiple-menu-btn"></button>
+                        <button uib-tooltip="Paste" class="btn paste-btn multiple-menu-btn" ng-disabled="moveCount==0" ng-click="dropMove()">
+                            <span class="badge" ng-if="moveCount>0">{{moveCount}}</span>
+                        </button>
+                        <button uib-tooltip="Delete Document" class="btn delete-btn multiple-menu-btn" ng-click="deleteFiles()"></button>
+                        <button uib-tooltip="Select All" class="btn select-all-btn multiple-menu-btn" ng-click="selectAllFiles()"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-drag-clone class="cloned-file-item">
+        <div class="selected-message" ng-if="selectedCount>1">
+            {{selectedCount}} Files selected
+        </div>
+        <div class="selected-message" ng-if="selectedCount==1">
+            1 File selected
+        </div>
+    </div>
+    <div class="panel panel-default fixed-bottm upload-popup" ng-if='uploadFilesLength' ng-class="{'minimize-item': minimizeFooter}">
+        <div class="panel-heading" ng-click="toggleMinimize('head')">
+            <div class="panel-title">
+                <span ng-show='uploadFilesLength!==uploadedData'>
+                Uploading {{uploadFilesLength-uploadedData}} item
+                </span>
+                <span ng-show='uploadFilesLength===uploadedData'>
+                {{uploadedData}} uploads complete
+                </span>
+                <!--  <span ng-show='totalUploadPrecentage===100'>
+                {{uploadedData}} uploads complete
+                </span> -->
+                <div class="pull-right" ng-click="close()">
+                    <i class="fa fa-times"></i>
+                </div>
+                <div class="pull-right">
+                    <i class="fa minimize-btn" ng-class="{'fa-square-o': minimizeFooter, 'fa-minus': !minimizeFooter}" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body show-progress-container">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat='(key,value) in uploadFiles track by $index' ng-style="{background: 'linear-gradient(90deg, #c6ffdd '+value.percentage+'%, #ffffff 0%)'}">
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <p class="progress-name">{{value.name+value.percentage}}</p>
+                            <!-- <p>Uploading... {{value.percentage}}%</p> -->
+                        </div>
+                        <div class="col-xs-2">
+                            <button class="btn btn-primary pull-right ml-5 cancel-upload-btn" ng-click='stopUpload(value, key, $index)' ng-if='!value.isAbort && value.percentage!==100'><i class="fa fa-times" aria-hidden="true"></i></button>
+                            <button class="btn btn-primary pull-right ml-5 cancel-upload-btn" ng-click='resumeUpload(value)' ng-if='value.isAbort && value.percentage!==100'><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                            <button class="btn btn-primary pull-right ml-5 cancel-upload-btn" ng-click='removeFromUploadFiles(value)' ng-if='value.percentage===100'><i class="fa fa-check" aria-hidden="true"></i></button>
+                            <!-- <button class="btn btn-primary pull-right"><i class="fa fa-pencil" aria-hidden="true"></i></button> -->
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- <div class="panel-footer">
+            <button class="btn btn-primary" ng-click='startUpload()' ng-disabled='totalUploadPrecentage!==0'>Upload All<i class="fa fa-spinner fa-spin" ng-show='totalUploadPrecentage!==100 && totalUploadPrecentage!==0'></i></button>
+            <button class="btn btn-primary" ng-click='close()' ng-disabled='totalUploadPrecentage!==100 && totalUploadPrecentage!==0'>Close</button>
+        </div> -->
+    </div>
+</div>

@@ -1,0 +1,240 @@
+.files-grid-view {
+    /*text-align: center;*/
+}
+
+.files-grid-view .file-grid-item {
+    /*width: 200px;*/
+    width: calc(20% - 8px);
+    /*width: 22%;*/
+    min-width: 150px;
+    height: 140px;
+    display: inline-block;
+    margin: 2px 4px;
+    border: 1px solid #ccc;
+}
+
+.files-grid-view .file-grid-item .thumbnail {
+    height: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.files-grid-view .file-grid-item .thumbnail.has-image {
+    background-size: 0px;
+}
+
+.files-grid-view .file-grid-item .thumbnail .thumbnail-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #eee;
+}
+
+.files-grid-view .file-grid-item .thumbnail .thumbnail-footer .name {
+    display: inline-block;
+    width: 75%;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: bold;
+    color: #555;
+    text-align: left;
+    padding: 4px 0 1px 10px;
+}
+
+.files-grid-view .file-grid-item .thumbnail .thumbnail-footer .size {
+    display: inline-block;
+    width: 25%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 11px;
+    text-align: right;
+    padding-bottom: 2px;
+    padding-right: 5px;
+}
+
+.top-triangle {
+    width: 0;
+    height: 0;
+    border-top: 45px solid;
+    border-left: 50px solid transparent;
+}
+
+.files-grid-view .top-triangle.badge-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.files-grid-view .top-triangle-adjust {
+    width: 0;
+    height: 0;
+    border-top: 41px solid;
+    border-left: 46px solid transparent;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    z-index: 2;
+}
+
+.files-grid-view .file-grid-item .extension-display {
+    position: absolute;
+    right: 2px;
+    top: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 3;
+}
+
+.files-grid-view .file-grid-item .check-marker {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 3px;
+    top: -1px;
+    opacity: 0;
+    z-index: 4;
+    transition: all 0.6s;
+}
+
+.files-grid-view .file-grid-item .check-marker input {
+    width: 16px;
+    height: 16px;
+}
+
+.files-grid-view .file-grid-item:hover .check-marker {
+    opacity: 1;
+}
+
+.files-grid-view .file-grid-item .thumbnail .thumbnail-overlay {
+    position: absolute;
+    left: 0;
+    /*right: 200px;*/
+    right: 0px;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: left;
+    padding: 12px 0 0 12px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.files-grid-view .file-grid-item .thumbnail .thumbnail-overlay .overlay-name {
+    font-size: 14px;
+    padding-bottom: 8px;
+    padding-top: 2px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #eee;
+}
+
+.files-grid-view .file-grid-item .thumbnail .thumbnail-overlay .overlay-detail {
+    padding: 1px 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.files-grid-view .file-grid-item .thumbnail .thumbnail-overlay .overlay-detail .title {
+    font-size: 11px;
+    color: #bbb;
+}
+
+.files-grid-view .file-grid-item .thumbnail .thumbnail-overlay .overlay-detail .title-value {
+    font-size: 12px;
+    color: #eee;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.files-grid-view .file-grid-item:hover .thumbnail .thumbnail-overlay {
+    opacity: 1;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.files-grid-view .file-grid-item .thumbnail.has-image .thumbnail-overlay {
+    opacity: 1;
+    left: 0px;
+    right: 0px;
+    background-color: #fff;
+}
+
+
+/***For items with no preview**/
+
+.files-grid-view .file-grid-item .thumbnail.has-image .thumbnail-overlay .overlay-name {
+    color: #444;
+}
+
+.files-grid-view .file-grid-item .thumbnail.has-image .thumbnail-overlay .overlay-detail .title {
+    color: #888;
+}
+
+.files-grid-view .file-grid-item .thumbnail.has-image .thumbnail-overlay .overlay-detail .title-value {
+    color: #555;
+}
+
+
+/***For items with no preview**/
+
+
+/**Selected with image preview**/
+
+.files-grid-view .file-grid-item.is-selected .thumbnail .thumbnail-overlay {
+    opacity: 1;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.files-grid-view .file-grid-item.is-selected .check-marker {
+    opacity: 1;
+}
+
+
+/**Selected with image preview**/
+
+.files-grid-view .file-grid-item.upload-file-area {
+    vertical-align: top;
+    border: 1px dashed #bbb;
+    background-image: url('./../../resources/files/upload_file_big.png');
+    background-repeat: no-repeat;
+    background-position: center 32px;
+    cursor: pointer;
+}
+
+.files-grid-view .file-grid-item.upload-file-area .upload-file {
+    color: #aaa;
+    padding-top: 78px;
+}
+
+.grid .file-grid-item.dragging {
+    /*position: fixed;*/
+}
+
+.grid .file-grid-item.dragging {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) !important;
+}
+
+.cloned-file-item {
+    width: 100px !important;
+    height: 50px !important;
+    text-align: center;
+    padding: 5px 5px !important;
+    background: #ddd;
+    color: #333;
+    font-size: 13px;
+    line-height: 15px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    margin-left: 40px;
+}

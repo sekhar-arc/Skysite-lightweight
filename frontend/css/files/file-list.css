@@ -1,0 +1,104 @@
+.file-list-view .ui-grid-column-menu-button {
+    display: none;
+}
+
+.file-list-view.ui-grid {
+    border: none;
+}
+
+.file-list-view .ui-grid-header-cell {
+    border-right: none !important;
+    /*border-left: none;*/
+}
+
+.file-list-view .ui-grid-header-cell {
+    border: none;
+    background: #fff;
+}
+
+.file-list-view .ui-grid-render-container .ui-grid-header {
+    border-bottom: 2px solid #ccc;
+}
+
+.file-list-view .ui-grid-cell-contents {
+    outline: none;
+}
+
+.file-list-view .ui-grid-render-container-left .ui-grid-header {
+    border-bottom: 2px solid #888;
+}
+
+.file-list-view .ui-grid-row .ui-grid-cell {
+    background-color: #fff;
+    border-bottom: 1px solid #888;
+    border-right: none !important;
+    /*height: 60px;*/
+}
+
+.file-list-view .ui-grid-row .name-cell-content.dragging {}
+
+.file-list-view .ui-grid-row .ui-grid-cell.is-selected {
+    background-color: #ddd !important;
+}
+
+.file-list-view .ui-grid-viewport .ui-grid-cell-contents {
+    padding-top: 20px;
+}
+
+.file-list-view .ui-grid-viewport .ui-grid-cell-contents .list-extension-style {
+    width: 40px;
+    display: inline-block;
+    height: 40px;
+    border: 1px solid;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin-top: -12px;
+    margin-left: 15px;
+}
+
+.file-list-view .ui-grid-viewport .name-cell {
+    font-weight: bold;
+}
+
+.custom-contents-style .ui-grid-extension {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    color: blue;
+    border: 2px solid;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: top;
+    padding-top: 9px;
+    margin-top: -10px;
+    font-size: 13px;
+}
+
+.custom-contents-style .ui-grid-name {
+    display: inline-block;
+    margin-top: -7px;
+    padding-left: 8px;
+    font-size: 13px;
+    color: #444;
+}
+
+.custom-contents-style .ui-grid-version {
+    width: 35px;
+    display: inline-block;
+    border-right: 1px solid;
+    font-size: 12px;
+    color: #999;
+    padding-left: 1px;
+}
+
+.custom-contents-style .ui-grid-size {
+    display: inline-block;
+    padding-left: 8px;
+    font-size: 12px;
+    color: #999;
+}
+
+.list .dragging {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) !important;
+}

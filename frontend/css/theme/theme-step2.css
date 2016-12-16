@@ -1,0 +1,189 @@
+.theme-step2-container {
+    height: calc(100vh - 86px);
+    min-height: 510px;
+}
+
+.theme-step2-container .step2-top-section,
+.theme-step2-container .step2-bottom-section {
+    height: 60px;
+}
+
+.theme-step2-container .step2-top-section .left-spacing-adjust {
+    border-bottom: 1px dashed #999;
+}
+
+.theme-step2-container .step2-top-section .center-spacing-adjust {
+    border-bottom: 1px dashed #444;
+    border-right: 1px dashed #999;
+    border-left: 1px dashed #999;
+}
+
+.theme-step2-container .step2-top-section .right-spacing-adjust {
+    border-bottom: 1px dashed #999;
+}
+
+.theme-step2-container .step2-bottom-section .left-spacing-adjust {
+    border-top: 1px dashed #999;
+}
+
+.theme-step2-container .step2-bottom-section .center-spacing-adjust {
+    border-top: 1px dashed #444;
+    border-right: 1px dashed #999;
+    border-left: 1px dashed #999;
+}
+
+.theme-step2-container .step2-bottom-section .right-spacing-adjust {
+    border-top: 1px dashed #999;
+}
+
+.theme-step2-container .step2-middle-section {
+    height: calc(100% - 120px);
+}
+
+.theme-step2-container .step2-middle-section .center-main-panel {
+    border-left: 1px dashed #444;
+    border-right: 1px dashed #444;
+    position: relative;
+}
+
+.theme-step2-container .step2-middle-section .center-main-panel .center-header {
+    padding-top: 20px;
+    color: #555;
+    font-size: 16px;
+}
+
+.theme-step2-container .step2-middle-section .center-main-panel .color-texture-container {
+    padding-top: 40px;
+    font-size: 18px;
+    color: #888;
+    margin: 0px 25px;
+}
+
+.theme-step2-container .color-list .color-list-item {
+    width: calc(12.5% - 10px);
+    height: 30px;
+    display: inline-block;
+    margin: 2px 5px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.theme-step2-container .texture-list .texture-list-item {
+    width: calc(20% - 10px);
+    height: 90px;
+    display: inline-block;
+    margin: 2px 5px;
+    border-radius: 4px;
+    border: 1px solid #D4D0D0;
+    position: relative;
+}
+
+.theme-step2-container .texture-list .texture-list-item.selected img {
+    position: absolute;
+    top: 42%;
+    left: 36%;
+}
+
+.theme-step2-container .color-list .color-list-item.selected img {
+    position: absolute;
+    left: 30%;
+    top: 28%;
+}
+
+.theme-step2-container .color-list,
+.theme-step2-container .texture-list {
+    margin-top: 20px;
+}
+
+.height-100 {
+    height: 100%;
+}
+
+.theme-step2-container .next-btn-container {
+    margin: 20px 25px 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+}
+
+.next-btn {
+    background-color: #4ca8e9;
+    border: none;
+    text-transform: uppercase;
+    width: 120px;
+    height: 38px;
+    border-radius: 4px;
+    position: relative;
+    padding-right: 25px;
+}
+
+.save-btn {
+    background-color: #4ca8e9;
+    border: none;
+    text-transform: capitalize;
+    width: 120px;
+    height: 38px;
+    border-radius: 5px;
+    position: relative;
+    color: #fff;
+    font-weight: 900;
+}
+
+.cancel-btn {
+    background-color: #f4f4f4;
+    border: 1px solid #aaa;
+    text-transform: capitalize;
+    width: 120px;
+    height: 38px;
+    border-radius: 5px;
+    position: relative;
+    color: #000;
+    font-weight: 300;
+}
+
+.next-btn:after {
+    content: ">";
+    font-size: 20px;
+    position: absolute;
+    top: 3px;
+    right: 22px;
+    color: rgba(238, 238, 238, 0.75);
+}
+
+.theme-step3-container .top-down-panel-name .name {
+    display: inline-block;
+    padding-top: 10px;
+    width: 60px;
+    color: #555;
+}
+
+.theme-step3-container .left-right-panel-name .name {
+    display: inline-block;
+    width: 60px;
+    color: #555;
+}
+
+.theme-step3-container .display-table {
+    left: 0;
+}
+
+.as-sortable-item-handle {
+    background-repeat: no-repeat;
+    background-position: center;
+    /*border: 1px solid;*/
+}
+
+.as-sortable-placeholder {
+    display: inline-block !important;
+    border: 1px dotted #888;
+}
+
+.as-sortable-drag {
+    min-width: 50px;
+    min-height: 20px;
+}
+
+.as-sortable-drag button {
+    display: none;
+}

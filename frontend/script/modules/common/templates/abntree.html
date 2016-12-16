@@ -1,0 +1,33 @@
+<div>
+    <!-- <div class='abn-tree-header'>
+        <div class="project-name">
+            {{projectName}}
+        </div>
+    </div> -->
+    <ul class="nav nav-list nav-pills nav-stacked abn-tree">
+        <li ng-repeat="row in tree_rows | filter:{visible:true} track by row.branch.uid" ng-animate="'abn-tree-animate'" ng-class="'level-' + {{ row.level }} + (row.branch.selected ? ' active':'') + ' ' +row.classes.join(' ')" class="abn-tree-row">
+            <div class="horizontal-line level-2-line">
+            </div>
+            <div class="horizontal-line level-3-line">
+            </div>
+            <div class="horizontal-line level-4-line">
+            </div>
+            <div class="horizontal-line level-5-line">
+            </div>
+            <div class="horizontal-line level-6-line">
+            </div>
+            <div class="horizontal-line level-7-line">
+            </div>
+            <div class="horizontal-line level-8-line">
+            </div>
+            <div class="horizontal-line level-9-line">
+            </div>
+            <div class="horizontal-line level-10-line">
+            </div>
+            <a class="indented" ng-click="user_clicks_branch(row.branch)" ng-drag={{dragDrop}} ng-drop={{dragDrop}} ng-drop-success='user_drops_branch($data, row.branch)' ng-drag-data='row.branch' ng-drag-start='collapseOnDrag($data)' ng-drag-stop='resetFolderFlag($data)' context-menu="FolderMenuOptions(row.branch)">
+                <i ng-class="row.tree_icon" ng-click="expandFolder(row.branch)" class="tree-icon"> </i>
+                <span class="tree-label" ng-click="expandFolder(row.branch)">{{ row.label }} </span>
+            </a>
+        </li>
+    </ul>
+</div>

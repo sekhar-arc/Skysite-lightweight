@@ -1,0 +1,35 @@
+<div class="theme-step1-container container" ng-init='vm.init()'>
+    <div class="theme-select text-center">
+        <div>
+            {{vm.selectedTemplate.TemplateName}} loaded
+        </div>
+    </div>
+    <div class="welcome-text">
+        <div class="name text-center">
+            Hello {{vm.firstName}},
+        </div>
+        <p class="text-center">
+            You can create your custom theme or you can choose an existing one!
+        </p>
+    </div>
+    <div class="own-theme-btn text-center">
+        <button class="btn btn-primary create-btn" ng-click="vm.createTheme()">
+            Create your own theme
+        </button>
+    </div>
+    <p class="text-center pick">
+        Or pick a template you like.
+    </p>
+    <div class="xrow template-selection-row">
+        <div ng-repeat="template in vm.templates" class="col-sm-6 col-md-3 text-center template-img-container" ng-click="vm.selectTemplate($index)" ng-class="{'selected':template.isSelected}">
+            <img class="template-img" ng-src="{{template.imgSrc}}">
+            <p class="text-center">{{template.TemplateName}}</p>
+            <img class="theme-selected-tick" src="resources/theme/theme-active.png">
+        </div>
+    </div>
+    <div class="next-btn-container text-right row">
+        <div class="col-sm-12">
+            <button class="btn btn-primary next-btn" ng-click="vm.goToDashboard()">Next</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,397 @@
+/* 
+   abn-tree.css
+
+   style for the angular-bootstrap-nav-tree
+   for both Bootstrap 2 and Bootstrap 3
+
+*/
+
+
+/* ------------------------------------------
+AngularJS Animations...
+
+The first selector is for Angular 1.1.5
+The second selector is for Angular 1.2.0
+
+*/
+
+.abn-tree-animate-enter,
+li.abn-tree-row.ng-enter {
+    transition: 200ms linear all;
+    position: relative;
+    display: block;
+    opacity: 0;
+    max-height: 0px;
+}
+
+.abn-tree-animate-enter.abn-tree-animate-enter-active,
+li.abn-tree-row.ng-enter-active {
+    opacity: 1;
+    max-height: 30px;
+}
+
+.abn-tree-animate-leave,
+li.abn-tree-row.ng-leave {
+    transition: 200ms linear all;
+    position: relative;
+    display: block;
+    height: 30px;
+    max-height: 30px;
+    opacity: 1;
+}
+
+.abn-tree-animate-leave.abn-tree-animate-leave-active,
+li.abn-tree-row.ng-leave-active {
+    height: 0px;
+    max-height: 0px;
+    opacity: 0;
+}
+
+li.abn-tree-row.active {}
+
+li.abn-tree-row.active a,
+li.abn-tree-row.active a:hover,
+li.abn-tree-row.active a:focus {
+    padding: 3px 10px;
+    position: relative;
+    background: transparent;
+    color: #337ab7;
+}
+
+
+/* 
+------------------------------------------
+Angular 1.2.0 Animation 
+*/
+
+.abn-tree-animate.ng-enter {}
+
+.abn-tree-animate.ng-enter {}
+
+
+/*
+   end animation stuff
+-----------------------------------------
+   begin normal css stuff
+*/
+
+ul.abn-tree li.abn-tree-row {
+    padding: 0px;
+    margin: 0px;
+}
+
+ul.abn-tree li.abn-tree-row a {
+    padding: 3px 10px;
+    position: relative;
+    color: #53738E;
+}
+
+ul.abn-tree i.indented {
+    padding: 2px;
+}
+
+.abn-tree {
+    cursor: pointer;
+    /*margin-left: -20px;
+    margin-top: -45px;*/
+}
+
+ul.nav.abn-tree .level-1 .indented {
+    position: relative;
+    left: 0px;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+ul.nav.abn-tree .level-2 .indented {
+    position: relative;
+    left: 20px;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+ul.nav.abn-tree .level-3 .indented {
+    position: relative;
+    left: 40px;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+ul.nav.abn-tree .level-4 .indented {
+    position: relative;
+    left: 60px;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+ul.nav.abn-tree .level-5 .indented {
+    position: relative;
+    left: 80px;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+ul.nav.abn-tree .level-6 .indented {
+    position: relative;
+    left: 100px;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+ul.nav.nav-list.abn-tree .level-7 .indented {
+    position: relative;
+    left: 120px;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+ul.nav.nav-list.abn-tree .level-8 .indented {
+    position: relative;
+    left: 140px;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+ul.nav.nav-list.abn-tree .level-9 .indented {
+    position: relative;
+    left: 160px;
+    padding: 3px 1px;
+    border-radius: 5px;
+}
+
+ul.abn-tree .tree-icon {
+    padding-right: 1px!important;
+    padding-left: 17px !important;
+    position: absolute;
+}
+
+ul.abn-tree .tree-icon::after {
+    content: '\f111';
+    font-size: 9px;
+    vertical-align: text-top;
+    display: inline-block;
+    color: #999;
+    margin-top: 6px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    /*color: #A8B7F1;*/
+}
+
+ul.abn-tree .abn-leaf-node::after {
+    content: '' !important;
+}
+
+ul.abn-tree .tree-icon.fa-folder-open-o::after {
+    content: '\f111';
+}
+
+.abn-header-btn {
+    background-color: transparent !important;
+    color: #000 !important;
+    border-radius: 50%!important;
+    width: 33px;
+    height: 34px;
+    padding-top: 5px;
+    padding-left: 13px;
+    border-color: #aaa !important;
+}
+
+.abn-tree-header {
+    /*background-color: #fff;*/
+}
+
+.abn-tree-header .project-name {
+    color: #337ab7;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    border: 1px solid;
+    margin-bottom: 10px;
+}
+
+ul.nav.abn-tree span.indented {
+    font-size: 14px;
+    top: -3px;
+    /*max-width: 145px !important;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;*/
+}
+
+ul.nav.abn-tree a.indented {
+    padding: 5px !important;
+}
+
+.abn-tree .fa-folder-o:before {
+    font-size: 22px;
+    background-image: url('../../resources/folder-tree.png');
+    color: rgba(0, 0, 0, 0.0);
+    background-repeat: no-repeat;
+    background-position: 1px 3px;
+}
+
+.abn-tree .fa-folder-open-o:before {
+    font-size: 22px;
+    background-image: url('../../resources/folder-tree.png');
+    color: rgba(0, 0, 0, 0.0);
+    background-repeat: no-repeat;
+    background-position: 1px 3px;
+}
+
+li.abn-tree-row.active a span {
+    /*background-color: #337ab7;*/
+    color: #000;
+}
+
+li.abn-tree-row.active a {
+    background-color: #fdf9ca;
+    border-left: 3px solid #337ab7;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    margin-left: -9px;
+}
+
+.abn-tree .tree-label {
+    padding-left: 44px;
+    font-size: 13px;
+}
+
+
+/****Vertical Line******/
+
+.abn-tree .horizontal-line {
+    border-left: 1px solid #ddd;
+    position: absolute;
+    height: 30px;
+    top: -8.5px;
+    z-index: -1;
+}
+
+.abn-tree .level-2-line {
+    left: 30px;
+}
+
+.abn-tree .level-3-line {
+    left: 50px;
+}
+
+.abn-tree .level-4-line {
+    left: 70px;
+}
+
+.abn-tree .level-5-line {
+    left: 90px;
+}
+
+.abn-tree .level-6-line {
+    left: 110px;
+}
+
+.abn-tree .level-7-line {
+    left: 130px;
+}
+
+.abn-tree .level-8-line {
+    left: 150px;
+}
+
+.abn-tree .level-9-line {
+    left: 170px;
+}
+
+.abn-tree .level-1 .level-2-line,
+.abn-tree .level-1 .level-3-line,
+.abn-tree .level-1 .level-4-line,
+.abn-tree .level-1 .level-5-line,
+.abn-tree .level-1 .level-6-line,
+.abn-tree .level-1 .level-7-line,
+.abn-tree .level-1 .level-8-line,
+.abn-tree .level-1 .level-9-line,
+.abn-tree .level-1 .level-10-line {
+    display: none;
+}
+
+.abn-tree .level-2 .level-3-line,
+.abn-tree .level-2 .level-4-line,
+.abn-tree .level-2 .level-5-line,
+.abn-tree .level-2 .level-6-line,
+.abn-tree .level-2 .level-7-line,
+.abn-tree .level-2 .level-8-line,
+.abn-tree .level-2 .level-9-line,
+.abn-tree .level-2 .level-10-line {
+    display: none;
+}
+
+.abn-tree .level-3 .level-4-line,
+.abn-tree .level-3 .level-5-line,
+.abn-tree .level-3 .level-6-line,
+.abn-tree .level-3 .level-7-line,
+.abn-tree .level-3 .level-8-line,
+.abn-tree .level-3 .level-9-line,
+.abn-tree .level-3 .level-10-line {
+    display: none;
+}
+
+.abn-tree .level-4 .level-5-line,
+.abn-tree .level-4 .level-6-line,
+.abn-tree .level-4 .level-7-line,
+.abn-tree .level-4 .level-8-line,
+.abn-tree .level-4 .level-9-line,
+.abn-tree .level-4 .level-10-line {
+    display: none;
+}
+
+.abn-tree .level-5 .level-6-line,
+.abn-tree .level-5 .level-7-line,
+.abn-tree .level-5 .level-8-line,
+.abn-tree .level-5 .level-9-line,
+.abn-tree .level-5 .level-10-line {
+    display: none;
+}
+
+.abn-tree .level-6 .level-7-line,
+.abn-tree .level-6 .level-8-line,
+.abn-tree .level-6 .level-9-line,
+.abn-tree .level-6 .level-10-line {
+    display: none;
+}
+
+.abn-tree .level-7 .level-8-line,
+.abn-tree .level-7 .level-9-line,
+.abn-tree .level-7 .level-10-line {
+    display: none;
+}
+
+.abn-tree .level-8 .level-9-line,
+.abn-tree .level-8 .level-10-line {
+    display: none;
+}
+
+.abn-tree .level-9 .level-10-line {
+    display: none;
+}
+
+
+/****Vertical line********/
+
+
+/*ul.nav.abn-tree li.active a.indented {
+    padding-left: 11px !important;
+}*/
+
+.abn-tree .level-1 .tree-label {
+    font-size: 15px !important;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.abn-tree a.indented.drag-enter {
+    border: 1px solid;
+}
+
+ul.nav.abn-tree li.active a.indented {
+    padding-left: 3px!important;
+    margin-left: -1px;
+}

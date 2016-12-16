@@ -1,0 +1,22 @@
+{
+    "web": {
+        "client_id": "918637953416-nu5734pbs8mqvvslet02dek24juocs59.apps.googleusercontent.com",
+        "project_id": "marine-service-144707",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://accounts.google.com/o/oauth2/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret": "Q8GydugUnSUvNF7OFGLXX1I5",
+        "redirect_uris": ["http://localhost/e-arc/build"],
+        "javascript_origins": ["http://localhost"],
+        "downloadLink":"https://drive.google.com/uc?export=download&id=0BxFIzfDN3AKYTXNuMUwxNkpzanc"
+    },
+    "box": {
+        "client_id": "kh90udrdar63yor52siliw4qq4mgx5v8",
+        "client_secret": "513TUImetWeqo2ZxuBqH6999MVBQu73o",
+        "api-key": "kh90udrdar63yor52siliw4qq4mgx5v8"
+    },
+    "drop_box": {
+        "App_key": "ryuewf3d6eu0oqk",
+        "App secret": "29hlr7iaui1ipej"
+    }
+}

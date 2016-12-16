@@ -1,0 +1,15 @@
+<div>
+    Folder view Name: {{currentFolder.name}}
+    <h3>Folders : -</h3>
+    <ul>
+        <li ng-repeat="folders in currentFolder.childFolders" ng-click="changeCurrentFolder(folders)">
+            {{folders.name}}
+        </li>
+    </ul>
+    <h3>Files : -</h3>
+    <ul>
+        <li ng-repeat="files in currentFolder.childFiles">
+            {{files.name}}
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app='eArcApp'>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <!-- <base href="/e-arc/build/"> -->
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/vendor.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/app.min.css" />
+</head>
+
+<body ng-right-click>
+    <ui-view></ui-view>
+    <toaster-container  toaster-options="{'close-button': true}"></toaster-container>
+    <script>
+    //optional need to be loaded before angular-file-upload-shim(.min).js
+    FileAPI = {
+        //only one of jsPath or jsUrl.
+        jsUrl: './js/FileAPI.min.js',
+
+        //only one of staticPath or flashUrl.
+        flashUrl: './resources/FileAPI.flash.swf',
+
+        //forceLoad: true, html5: false //to debug flash in HTML5 browsers
+        //noContentTimeout: 10000 (see #528)
+    }
+    </script>
+    <script src="https://apis.google.com/js/client.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="ryuewf3d6eu0oqk"></script>
+    <script type="text/javascript" src="https://app.box.com/js/static/select.js"></script>
+    <script type="text/javascript" src="https://js.live.net/v5.0/OneDrive.js" id="onedrive-js" client-id="dc8a39a6-b608-4526-9291-3703c1f8279e"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="js/vendor.min.js"></script>
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>

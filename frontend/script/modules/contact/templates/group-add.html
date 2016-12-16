@@ -1,0 +1,122 @@
+<div ng-init="vm.init()">
+    <scrollable>
+        <div class="add-contact add-group">
+            <form name='addGroup' ui-form='submitForm'>
+                <div class="contact-info-block form-block">
+                    <div class="header">
+                        <p>Group Info</p>
+                    </div>
+                    <div class="body">
+                        <div class="img-uploader">
+                            <div class="text-center">
+                                <div class="img-wrapper">
+                                    <img src="./resources/upload.png">
+                                </div>
+                                <p>Upload Image</p>
+                            </div>
+                        </div>
+                        <div class="form">
+                            <div class="form-wrapper">
+                                <div class="row form-group">
+                                    <div class="col-sm-12">
+                                        <div class="label-wrapper col-md-2 col-sm-4 ">
+                                            <label class="col-form-label" for="Group_Name">Group Name <sup>*</sup></label>
+                                        </div>
+                                        <div class="col-md-10 col-sm-8">
+                                            <input type="text" name="Group_Name" placeholder="Group Name" class="form-control" type="text" id="Group_Name" ng-model='vm.groupName' ui-required ng-class="{'error':(addGroup.Group_Name.$invalid && addGroup.Group_Name.$dirty)}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-group last-div">
+                                    <div class="col-sm-12">
+                                        <div class="label-wrapper col-md-2 col-sm-4 ">
+                                            <label class="col-form-label" for="Description">Description</label>
+                                        </div>
+                                        <div class="col-md-10 col-sm-8">
+                                            <!-- <input type="text" name="Address" placeholder="Address" class="form-control" type="text" id="Address" ng-model='vm.address'> -->
+                                            <textarea placeholder="Group Description" id="Description" name="Description" ng-model="vm.description"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="other-info-block form-block">
+                    <div class="header">
+                        <p>Add Group Members</p>
+                    </div>
+                    <div class="body">
+                        <div class="form">
+                            <div class="row form-group">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="label-wrapper col-xs-4 ">
+                                        <label class="col-form-label" for="example-text-input">Occupation</label>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <select class="form-control" ng-model="vm.occupation" ng-options="key as value for (key , value) in vm.occupationList"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-sm-12">
+                                    <div class="label-wrapper col-md-2 col-sm-4 ">
+                                        <label class="col-form-label" for="add-people">Add People</label>
+                                    </div>
+                                    <div class="col-md-10 col-sm-8">
+                                        <!-- <input type="text" name="add-people" placeholder="Add Group Members" class="form-control" type="text" id="add-people" ng-model='vm.members'> -->
+                                        <!-- <ui-select multiple sortable="true" ng-model="ctrl.multipleDemo.selectedPeople" theme="select2" class="form-control" title="Choose a person">
+                                            <ui-select-match placeholder="Select or search a person in the list...">{{$item.name}}</ui-select-match>
+                                            <ui-select-choices repeat="item in vm.contacts | filter: $select.search">
+                                                <div ng-bind-html="item.FirstName | highlight: $select.search"></div>
+                                                <small ng-bind-html="item.email | highlight: $select.search"></small>
+                                            </ui-select-choices>
+                                        </ui-select> -->
+                                        <ui-select multiple ng-model="vm.members" theme="bootstrap" ng-disabled="ctrl.disabled" sortable="true" close-on-select="false">
+                                            <ui-select-match placeholder="Add Group Members">
+                                                <div class="ui-selected-options">
+                                                    <img src="./resources/default-user.png" class="dp">
+                                                    <p ng-bind='$item.ContactName'></p>
+                                                    <img src="./resources/cross-search-tag.png" class="cross" ng-hide="$select.disabled" ng-click="$selectMultiple.removeChoice($index)">
+                                                </div>
+                                            </ui-select-match>
+                                            <ui-select-choices repeat="person in  (vm.contacts | filter: $select.search)">
+                                                <div class="ui-options">
+                                                    <img src="./resources/default-user.png">
+                                                    <div class="details">
+                                                        <p ng-bind='person.ContactName' class="name"></p>
+                                                        <p ng-bind='person.Email' class="email"></p>
+                                                    </div>
+                                                </div>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-block form-block">
+                    <div class="header">
+                        <p></p>
+                    </div>
+                    <div class="body">
+                        <div class="form">
+                            <div class="row form-group">
+                                <div class="col-sm-12">
+                                    <div class="col-md-offset-2 col-md-10 col-sm-8 col-sm-offset-4 error-msg" ng-if="(addGroup.Group_Name.$invalid && addGroup.Group_Name.$dirty)">
+                                        <p><sup>**</sup>Please fill up the mandatory fields.</p>
+                                    </div>
+                                    <div class="col-md-offset-2 col-md-10 col-sm-8 col-sm-offset-4">
+                                        <button class="submit-btn" type='submit'>Save</button>
+                                        <button class="cancel-btn" type="button" ng-click="vm.gotoContactList()">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </scrollable>
+</div>

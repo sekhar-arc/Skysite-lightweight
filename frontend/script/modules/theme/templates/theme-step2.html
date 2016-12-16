@@ -1,0 +1,46 @@
+<div class="theme-step2-container" ng-init='vm.init()'>
+    <div class="step2-top-section">
+        <div class="col-sm-1 left-spacing-adjust height-100"></div>
+        <div class="col-sm-10 center-spacing-adjust height-100"></div>
+        <div class="col-sm-1 right-spacing-adjust height-100"></div>
+    </div>
+    <div class="step2-middle-section">
+        <div class="col-sm-1 left-panel-drop height-100"></div>
+        <div class="col-sm-10 center-main-panel height-100">
+            <div class="center-header text-center">
+                Choose your preferable color and texture for your theme
+            </div>
+            <div class="row color-texture-container">
+                <div class="col-md-6">
+                    <p class="color-container">
+                        Pick a template color you like
+                    </p>
+                    <div class="color-list">
+                        <div ng-repeat="color in vm.colors" ng-class="{'selected': color.isSelected}" class="color-list-item" style="background:{{color.code}}" ng-click="vm.selectColor(color, $index)">
+                            <img src="./resources/tick_white.png" ng-if="color.isSelected">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <p class="template-container">
+                        Pick a background texture you like
+                    </p>
+                    <div class="texture-list">
+                        <div ng-repeat="texture in vm.textures" ng-class="{'selected': texture.isSelected}" class="texture-list-item" style="background-image:url({{texture.url}})" ng-click="vm.selectTexture(texture, $index)">
+                            <img src="./resources/tick_gray.png" ng-if="texture.isSelected">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="next-btn-container text-right">
+                <button class="btn btn-primary next-btn" ng-click="vm.nextstep()">Next</button>
+            </div>
+        </div>
+        <div class="col-sm-1 right-panel-drop height-100"></div>
+    </div>
+    <div class="step2-bottom-section">
+        <div class="col-sm-1 left-spacing-adjust height-100"></div>
+        <div class="col-sm-10 center-spacing-adjust height-100"></div>
+        <div class="col-sm-1 right-spacing-adjust height-100"></div>
+    </div>
+</div>

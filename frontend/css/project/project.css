@@ -1,0 +1,408 @@
+/*body {
+    background-color: #e4f2fd;
+}*/
+
+.doc-container {
+    margin: 0px 10px;
+}
+
+.project input {
+    padding: 0px;
+}
+
+
+/* .doc-container .header  */
+
+.doc-container .header {
+    background-color: #fff;
+    padding: 7px 10px 5px 20px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom: 1px solid #111;
+    /*overflow: auto;*/
+}
+
+.doc-container .header .field {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 13px;
+}
+
+.doc-container .header .field.search-field .cross-btn {
+    position: absolute;
+    top: 3px;
+    right: 0px;
+    outline: none;
+    border: 0px;
+    background: transparent;
+}
+
+.doc-container .header .field .field-label {
+    font-size: 13px;
+    display: inline-block;
+    font-weight: 100;
+    margin-right: 5px;
+}
+
+.doc-container .header .field .dropdown button {
+    font-size: 13px;
+    min-width: 150px;
+    height: 28px;
+    line-height: 13px;
+    text-align: left;
+    background-color: #f5f5f5;
+}
+
+.doc-container .header .field .dropdown button i {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.doc-container .header .field.per-page-field .dropdown button i {
+    right: 0px;
+}
+
+.doc-container .header .field .input-field {
+    outline: 0px;
+    border: 0px;
+    background-color: #f5f5f5;
+    padding: 5px 13px;
+    line-height: 13px;
+    min-width: 175px;
+}
+
+.doc-container .header .field.per-page-field {
+    vertical-align: top;
+}
+
+.doc-container .header .field.per-page-field .dropdown button {
+    background: transparent;
+    min-width: 100px;
+}
+
+.doc-container .header .field.per-page-field .dropdown-menu {
+    right: 0px;
+    left: auto;
+}
+
+.doc-container .header .field.pagination-field ul {
+    margin: 0px;
+}
+
+.doc-container .header .field.pagination-field ul.pagination>li>a {
+    font-size: 13px;
+    border: 0px;
+}
+
+.doc-container .header .field.pagination-field ul.pagination>.active>a {
+    color: #000;
+    cursor: default;
+    background-color: #eaeaea;
+    border: 0px;
+    border-radius: 50%;
+}
+
+.doc-container .header .field.button-group {
+    vertical-align: top;
+    margin-top: 4px;
+    padding-bottom: 2px;
+    border-right: 1px solid;
+    padding-right: 10px;
+}
+
+.doc-container .header .field.button-group button {
+    outline: none;
+    border: 0px;
+    background: transparent;
+}
+
+.doc-container .header .field.button-group button img {
+    height: 14px;
+}
+
+
+/*         *        */
+
+
+/* .doc-container .body */
+
+.doc-container .body {
+    background-color: #fff;
+}
+
+.doc-container .body .body-margin {
+    padding: 10px;
+}
+
+.doc-container .body .body-margin .project-wrapper.create-project {
+    vertical-align: top;
+}
+
+.doc-container .body .body-margin .project-wrapper.create-project .details-row.country-field {
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.doc-container .body .body-margin .project-wrapper.create-project .details-row.state-field {
+    padding-top: 5px;
+    padding-bottom: 7px;
+}
+
+.doc-container .body .body-margin .project-wrapper.create-project .details-row .dropdown {
+    font-size: 13px;
+    vertical-align: top;
+    width: 69%;
+}
+
+.doc-container .body .body-margin .project-wrapper.create-project .details-row .dropdown button {
+    border: 0px;
+    padding: 0px;
+    width: 100%;
+    background: transparent;
+    color: #b1b1b1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    padding-right: 10px;
+}
+
+.doc-container .body .body-margin .project-wrapper.create-project .details-row .dropdown button:active {
+    box-shadow: 0 0;
+}
+
+.doc-container .body .body-margin .project-wrapper.create-project .details-row .dropdown button span {
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.btn-group.open .dropdown-toggle {
+    box-shadow: 0 0;
+}
+
+.doc-container .body .body-margin .project-wrapper.create-project .details-row .dropdown .dropdown-menu {
+    max-height: 300px;
+    overflow: auto;
+    max-width: 250px;
+    font-size: 13px;
+}
+
+.doc-container .body .body-margin .project-wrapper.create-project .details-row .dropdown .dropdown-menu>li>a {
+    font-size: 13px;
+    font-weight: 100;
+    padding-left: 10px;
+    padding-right: 5px;
+    line-height: 13px;
+}
+
+.doc-container .body .body-margin .project-wrapper.create-project .details-row .dropdown button .caret {
+    position: absolute;
+    top: 9px;
+    right: 0px;
+}
+
+.doc-container .body .body-margin .project-wrapper.create-project .select {
+    font-size: 13px;
+    vertical-align: top;
+    width: 69%;
+}
+
+.doc-container .body .body-margin .project-wrapper.create-project .select select {
+    border: 0;
+    background: 0 0;
+    color: #b1b1b1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden!important;
+    width: 100%;
+    outline: none;
+}
+
+.doc-container .body .body-margin .project-wrapper .each-project {
+    margin: 10px;
+    box-shadow: 2px 2px 6px 1px #dedede;
+}
+
+.doc-container .body .body-margin .project-wrapper .each-project .project-img {
+    height: 130px;
+}
+
+.doc-container .body .body-margin .project-wrapper .each-project .project-img .add-img {
+    height: 100%;
+    width: 100%;
+    background-color: #f1f1f1;
+    position: relative;
+}
+
+.doc-container .body .body-margin .project-wrapper .each-project .project-img .add-img div {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 32%;
+    color: #969696;
+}
+
+.doc-container .body .body-margin .project-wrapper .each-project .project-details {
+    padding: 10px 15px;
+}
+
+.doc-container .body .body-margin .project-wrapper .each-project .project-details .details-header {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+.doc-container .body .body-margin .project-wrapper .each-project .project-details .details-header .project-name {
+    padding-right: 25px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 18px;
+    margin: 0px;
+}
+
+.doc-container .body .body-margin .project-wrapper.create-project .each-project .project-details .details-header .project-name {
+    padding-right: 0;
+    width: 100%;
+    border: 0px;
+    outline: 0px;
+}
+
+.doc-container .body .body-margin .project-wrapper .each-project .project-details .details-header .project-bookmark {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    outline: none;
+    font-size: 18px;
+}
+
+.doc-container .body .body-margin .project-wrapper .each-project .project-details .details-header .project-bookmark i {
+    color: #fccc00;
+}
+
+.doc-container .body .body-margin .project-wrapper .each-project .project-details .details-body {
+    padding: 10px 0;
+    position: relative;
+    font-size: 13px;
+}
+
+.doc-container .body .body-margin .project-wrapper.create-project .each-project .project-details .details-body {
+    /* padding-top: 19px;
+    padding-bottom: 18px;*/
+}
+
+.doc-container .body .body-margin .project-wrapper .each-project .project-details .details-body .details-row {}
+
+.doc-container .body .body-margin .project-wrapper .each-project .project-details .details-body .btn-wrapper {
+    overflow: auto;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+
+.doc-container .body .body-margin .project-wrapper .each-project .project-details .details-body .btn-wrapper button {
+    border: 0px;
+    background: transparent;
+    color: #1a194e;
+    font-size: 14px;
+    float: right;
+    outline: none;
+}
+
+.doc-container .body .body-margin .project-wrapper .each-project .project-details .details-body .details-row .project-label {
+    font-weight: 100;
+    width: 29%;
+    color: #b1b1b1;
+    margin-right: 1px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.doc-container .body .body-margin .project-wrapper.create-project .each-project .project-details .details-body .details-row .project-label {
+    color: #000;
+}
+
+.doc-container .body .body-margin .project-wrapper .each-project .project-details .details-body .details-row .project-value {
+    width: 69%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.doc-container .body .body-margin .project-wrapper.create-project .each-project .project-details .details-body .details-row input.project-value {
+    outline: 0px;
+    border: 0px;
+}
+
+
+/*         *       */
+
+@media (max-width: 1700px) {
+    .doc-container .body .body-margin .project-wrapper {
+        width: 16.66%;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 1550px) {
+    .doc-container .body .body-margin .project-wrapper {
+        width: 20%;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 1300px) {
+    .doc-container .body .body-margin .project-wrapper {
+        width: 25%;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 1100px) {
+    .doc-container .body .body-margin .project-wrapper {
+        width: 33.3%;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 1095px) {
+    .doc-container .header {
+        text-align: center;
+    }
+    .doc-container .header .double-line {
+        float: none!important;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 885px) {
+    .doc-container .body .body-margin .project-wrapper {
+        width: 50%;
+        display: inline-block;
+    }
+}
+
+
+/**/
+
+.tooltip .tooltip-inner {
+    background-color: #fff8ca;
+    color: #000;
+}
+
+.tooltip .tooltip-arrow {
+    border-top-color: #fff8ca !important;
+    color: #000;
+}
+
+.glyphicon-star-empty {
+    color: #000!important;
+}
+
+.project-main-container {
+    overflow: auto;
+}

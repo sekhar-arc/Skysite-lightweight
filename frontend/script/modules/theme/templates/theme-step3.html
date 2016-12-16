@@ -1,0 +1,89 @@
+<div class="theme-step2-container theme-step3-container" ng-init='vm.init()'>
+    <div class="step2-top-section">
+        <div class="col-sm-1 left-spacing-adjust height-100"></div>
+        <div class="col-sm-10 center-spacing-adjust height-100" ng-drop="true" ng-drop-data="{pos: 'top'}" ng-drop-success="vm.elementDropped($data,'top')">
+            <div class="top-down-panel-name height-100 text-center" data-as-sortable="board.dragTopControlListeners" data-ng-model="vm.topElements">
+                <div class="name" ng-if="!vm.topElements.length">
+                    Top Panel
+                </div>
+                <div ng-repeat="ele in vm.topElements" class="top-list-container height-100" ang-drag="true" ang-drag-data="{data: ele, pos: 'top'}" ng-if="vm.topElements.length" data-as-sortable-item>
+                    <div class="top-list height-100" style="background-image:url({{ele.icon}})" data-as-sortable-item-handle>
+                    </div>
+                    <button class="cross-btn" ng-click="vm.elementDropped({data: ele, pos: 'top'}, 'center')">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1 right-spacing-adjust height-100"></div>
+    </div>
+    <div class="step2-middle-section">
+        <div class="col-sm-1 left-panel-drop height-100">
+            <div class="display-table">
+                <div class="display-table-cell" ng-drop="true" ng-drop-success="vm.elementDropped($data,'left')" data-as-sortable="board.dragLeftControlListeners" data-ng-model="vm.leftElements">
+                    <div class="left-right-panel-name text-center" ng-if="!vm.leftElements.length">
+                        <div class="name height-100">
+                            Left Panel
+                        </div>
+                    </div>
+                    <div class="right-list-container" ng-if="vm.leftElements.length">
+                        <div class="right-list" ng-repeat="ele in vm.leftElements" ang-drag="true" ang-drag-data="{data: ele, pos: 'left'}" data-as-sortable-item>
+                            <div data-as-sortable-item-handle style="background-image:url({{ele.icon}}); background-repeat: no-repeat; width:100%; min-height: 20px; height: 100%;">
+                            </div>
+                            <button class="cross-btn" ng-click="vm.elementDropped({data: ele, pos: 'left'}, 'center')">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10 center-main-panel height-100" ang-drop="true" ang-drop-success="vm.elementDropped($data, 'center')">
+            <div class="center-header text-center">
+                Drag your preferable features to the Left, Top, Right and Left Panel.
+            </div>
+            <div class="element-container">
+                <div ng-repeat="element in vm.elements" class="element-item" style="background-image:url({{element.icon}})" ng-drag="true" ng-drag-data="{data: element, pos: 'center'}">
+                    <div class="element-name">
+                        {{element.name}}
+                    </div>
+                </div>
+            </div>
+            <div class="next-btn-container text-right center-next-btn">
+                <button class="btn btn-primary next-btn" ng-click="vm.nextstep()">Next</button>
+            </div>
+        </div>
+        <div class="col-sm-1 right-panel-drop height-100">
+            <div class="display-table">
+                <div class="display-table-cell" ng-drop="true" ng-drop-success="vm.elementDropped($data,'right')">
+                    <div class="left-right-panel-name text-center" ng-if="!vm.rightElements.length">
+                        <div class="name">
+                            Right Panel
+                        </div>
+                    </div>
+                    <div class="right-list-container" ng-if="vm.rightElements.length">
+                        <div class="right-list" ng-repeat="ele in vm.rightElements" style="background-image:url({{ele.icon}})" ng-drag="true" ng-drag-data="{data: ele, pos: 'right'}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="step2-bottom-section">
+        <div class="col-sm-1 left-spacing-adjust height-100"></div>
+        <div class="col-sm-10 center-spacing-adjust height-100" ng-drop="true" ng-drop-data="{pos: 'bottom'}" ng-drop-success="vm.elementDropped($data,'bottom')">
+            <div class="top-down-panel-name height-100 text-center">
+                <div class="name" ng-if="!vm.bottomElements.length">
+                    Bottom Panel
+                </div>
+                <div class="top-list-container height-100" ng-if="vm.bottomElements.length" ng-repeat="ele in vm.bottomElements" ng-drag="true" ng-drag-data="{data: ele, pos: 'bottom'}">
+                    <div class="top-list height-100" style="background-image:url({{ele.icon}})">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1 right-spacing-adjust height-100"></div>
+    </div>
+    <!-- <div ng-drag-clone style="background-image:url({{clonedData.data.icon}})" class="drag-clone-container">
+    </div> -->
+</div>

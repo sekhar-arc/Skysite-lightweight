@@ -1,0 +1,19 @@
+<div class="modal-header" ng-init="vm.init()">
+    <h3 class="text-center modal-title" id="modal-title">{{vm.headerText}}</h3>
+</div>
+<div class="modal-body project-edit-modal" id="modal-body">
+    <form class="form-horizontal">
+        <div class="row form-group">
+            <label class="control-label col-sm-12 text-left invite-label" for="owner_first">Invitation Message</label>
+            <div class="col-sm-12 invite-col-sm">
+                <textarea class="form-control" placeholder="Message" ng-model="vm.inviteMessage"></textarea>
+            </div>
+        </div>
+        <div class="row form-group text-right bottom-button-panel bottom-adust">
+            <div class="col-sm-12">
+                <button class="btn save-btn" ng-click="vm.send()">Send invitation</button>
+                <button class="btn cancel-btn" ng-click="vm.cancel()">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,63 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Update Document</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <uib-tabset active="active">
+        <uib-tab index="0" heading="General Properties">
+            <form>
+                <div class="form-group">
+                    <label for="title">Document Title</label>
+                    <input type="text" class="form-control" id="title" ng-model="vm.file.DocumentTitle" placeholder="Title">
+                </div>
+                <div class="form-group">
+                    <label for="name">Document Name</label>
+                    <input type="text" class="form-control" id="name" ng-model="vm.file.DocumentName" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label for="desc">Document Description</label>
+                    <textarea class="form-control" id="desc" ng-model="vm.file.DocumentDesc" placeholder="Description">
+                </div>
+                <div class="form-group">
+                    <label for="search_tags">Search Tags</label>
+                    <input type="text" class="form-control" id="search_tags" ng-model="vm.file.SearchTag" placeholder="Tags">
+                </div>
+            </form>
+        </uib-tab>
+        <uib-tab index="1" heading="Custom Properties">
+            <form>
+                <div class="form-group" ng-repeat="property in vm.customPropertyList">
+                    <label for="{{property.CustomPropertyID}}">{{property.PropertyName}}</label>
+                    <input ng-if="property.DataType==1" type="text" class="form-control" id="{{property.CustomPropertyID}}" placeholder="{{property.PropertyName}}" ng-model="property.LookupDataText">
+                    <input ng-if="property.DataType==2 || property.DataType==6" type="number" class="form-control" id="{{property.CustomPropertyID}}" placeholder="{{property.PropertyName}}" ng-model="property.LookupDataText">
+                    <!-- <input ng-if="property.DataType==3" type="date" class="form-control" id="{{property.CustomPropertyID}}" placeholder="{{property.PropertyName}}"> -->
+                    <p class="input-group" ng-if="property.DataType==3">
+                        <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="property.LookupDataText" is-open="property.opened" datepicker-options="dateOptions" ng-required="true" show-button-bar="false" close-text="Close" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open(property)"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </p>
+                    <div ng-if="property.DataType==5" class="radio">
+                        <label>
+                            <input type="radio" ng-model="property.LookupDataText" name="{{property.CustomPropertyID}}" placeholder="{{property.PropertyName}}" value="true"> Yes &nbsp;
+                        </label>
+                        <label>
+                            <input type="radio" ng-model="property.LookupDataText" name="{{property.CustomPropertyID}}" placeholder="{{property.PropertyName}}" value="false"> No
+                        </label>
+                    </div>
+                    <ui-select ng-if="property.PropertyType == 2" ng-model="property.selected" theme="bootstrap" reset-search-input="false" title="Title">
+                        <ui-select-match placeholder="Select {{property.PropertyName}}">{{$select.selected.LookupData[0].LookupDataText}}</ui-select-match>
+                        <ui-select-choices repeat="lookup in property.lookupList | filter: $select.search">
+                            <div>
+                                {{lookup.LookupData[0].LookupDataText}}
+                            </div>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </form>
+        </uib-tab>
+    </uib-tabset>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="vm.save()">Update</button>
+    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+</div>

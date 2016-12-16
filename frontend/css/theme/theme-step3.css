@@ -1,0 +1,116 @@
+/* Contains css for both steps 3 and 4*/
+
+.display-table {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.display-table .display-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.display-table .display-table-cell .theme-name {
+    width: 300px;
+    outline: none;
+    border: 0px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    display: inline-block;
+    margin: 20px auto 0px;
+    font-size: 18px;
+    padding-bottom: 5px;
+    opacity: 0.6;
+}
+
+.display-table .display-table-cell .save-btn {
+    display: block;
+    margin: 30px auto;
+}
+
+.display-table .display-table-cell p {
+    text-shadow: 1px 1px 1px #b3afaf;
+}
+
+.theme-step3-container .element-container {
+    margin: 40px 20px 0;
+}
+
+.theme-step3-container .element-container .element-item {
+    width: calc(16.66% - 16px);
+    display: inline-block;
+    border: 1px dotted #bbb;
+    background-repeat: no-repeat;
+    padding: 10px 0px 10px 40px;
+    background-position: 12px;
+    border-radius: 5px;
+    margin: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    -webkit-box-shadow: 5px 5px 13px 0px rgba(173, 173, 173, 1);
+    -moz-box-shadow: 5px 5px 13px 0px rgba(173, 173, 173, 1);
+    box-shadow: 5px 5px 13px 0px rgba(173, 173, 173, 1);
+    -moz-box-transition: all 0.1s;
+    -webkit-box-transition: all 0.1s;
+    transition: all 0.1s;
+}
+
+.theme-step3-container .center-spacing-adjust.drag-enter,
+.theme-step3-container .display-table-cell.drag-enter,
+.theme-step3-container .center-main-panel.drag-enter {
+    border: 1px solid #4C9A96;
+}
+
+.theme-step3-container .top-list-container {
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+}
+
+.theme-step3-container .top-list-container .top-list {
+    /*display: inline-block;*/
+    padding: 0 35px;
+    width: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    margin: 0px 4px;
+}
+
+.theme-step3-container .right-list-container .right-list {
+    width: 90%;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin: 4px auto;
+    position: relative;
+}
+
+
+/*.theme-step3-container .top-list-container .top-list.dragging,
+.theme-step3-container .right-list-container .right-list.dragging,
+.theme-step3-container .element-container .element-item.dragging {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) !important;
+}
+
+.theme-step3-container .drag-clone-container {
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid #ccc;
+}*/
+
+.theme-step3-container .cross-btn {
+    position: absolute;
+    top: -1px;
+    right: 2px;
+    background: transparent;
+    border: none;
+    color: rgb(187, 129, 129);
+    outline: none;
+}

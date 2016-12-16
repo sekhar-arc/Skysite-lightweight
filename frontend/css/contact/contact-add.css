@@ -1,0 +1,326 @@
+.body-wrapper .add-contact {
+    padding: 15px;
+}
+
+.body-wrapper .add-contact form .form-block .header {
+    margin-bottom: 10px;
+}
+
+.body-wrapper .add-contact form .form-block .header p {
+    font-size: 16px;
+    line-height: 16px;
+    margin-bottom: 0px;
+    font-weight: 300;
+}
+
+.body-wrapper .add-contact form .form-block .body {
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+}
+
+
+/*.body-wrapper .add-contact form .form-block.contact-info-block .body>div {
+    display: inline-block;
+    vertical-align: top;
+}*/
+
+.body-wrapper .add-contact form .form-block.contact-info-block .body>div.img-uploader {
+    position: absolute;
+    width: 200px;
+    top: 10px;
+    left: 0;
+}
+
+.body-wrapper .add-contact form .form-block .body>div.form {
+    width: 100%;
+    padding: 0 0 0 200px;
+}
+
+.body-wrapper .add-contact form .form-block.contact-info-block .body>div.img-uploader .img-wrapper {
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    border: 1px solid #d0d0d0;
+    border-radius: 50%;
+}
+
+.body-wrapper .add-contact form .form-block.contact-info-block .body>div.img-uploader .img-wrapper img {
+    height: 98px;
+    padding-top: 36px;
+    padding-bottom: 36px;
+}
+
+.body-wrapper .add-contact form .form-block.contact-info-block .body>div.img-uploader p {
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: 200;
+    margin-top: 10px;
+}
+
+.body-wrapper .add-contact form .form-block.contact-info-block .body .form .form-wrapper {
+    width: 100%;
+    border-left: 1px solid #d0d0d0;
+    padding: 0 0 0 15px;
+}
+
+.body-wrapper .add-contact form .form-block .body .form .row.form-group {
+    margin: 0px;
+    /*margin-bottom: 10px;*/
+}
+
+.body-wrapper .add-contact form .form-block .body .form .row.form-group>div {
+    margin-bottom: 10px;
+}
+
+.body-wrapper .add-contact form .form-block .body .form .row.form-group div {
+    padding: 0 5px;
+    margin-bottom: 10px;
+}
+
+.body-wrapper .add-contact form .form-block .body .form .row.form-group label {
+    font-size: 13px;
+    font-weight: 200;
+    color: #444;
+    text-align: right;
+    padding: 0px;
+    margin-bottom: 0px;
+    padding-right: 10px;
+}
+
+
+/**/
+
+.row.form-group input.error {
+    border-color: #ef6a6a!important;
+}
+
+
+/**/
+
+.body-wrapper .add-contact form .form-block .body .form .row.form-group input,
+.body-wrapper .add-contact form .form-block .body .form .row.form-group select,
+.body-wrapper .add-contact form .form-block .body .form .row.form-group textarea,
+.body-wrapper .add-contact form .form-block .body .form .row.form-group .ui-select-container {
+    height: 36px;
+    /*padding: 11px;*/
+    font-size: 13px;
+    font-weight: 200;
+    border-radius: 0;
+    box-shadow: 0 0 0;
+    border: 1px solid #dedede;
+}
+
+.body-wrapper .add-contact form .form-block .body .form .row.form-group .ui-select-container {
+    /*padding: 9px;*/
+    height: auto;
+    min-height: 36px;
+    padding: 10px 5px;
+}
+
+.body-wrapper .add-contact form .form-block .body .form .row.form-group .ui-select-container input {
+    height: auto;
+    border: 0px;
+    padding: 9px;
+    display: inline;
+    width: auto !important;
+}
+
+.ui-select-multiple.ui-select-bootstrap .ui-select-match-item {
+    border-radius: 3px;
+    border: 0px;
+    padding: 0px;
+    height: 32px;
+}
+
+.body-wrapper .add-contact form .form-block .body .form .row.form-group .ui-select-container .ui-selected-options {
+    min-width: 150px;
+    height: 32px;
+    padding: 0;
+    position: relative;
+    border: 1px solid #e7e7e7;
+    background-color: #e7e7e7;
+    border-radius: 3px;
+}
+
+.body-wrapper .add-contact form .form-block .body .form .row.form-group .ui-select-container .close {
+    display: none;
+}
+
+.body-wrapper .add-contact form .form-block .body .form .row.form-group .ui-select-container .ui-selected-options img.dp {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #111;
+}
+
+.body-wrapper .add-contact form .form-block .body .form .row.form-group .ui-select-container .ui-selected-options img.cross {
+    height: 8px;
+    position: absolute;
+    top: 11px;
+    right: 8px;
+}
+
+.body-wrapper .add-contact form .form-block .body .form .row.form-group .ui-select-match>span {
+    margin-right: 5px;
+}
+
+.body-wrapper .add-contact form .form-block .body .form .row.form-group .ui-select-container .ui-selected-options p {
+    width: 100%;
+    padding-left: 35px;
+    font-size: 13px;
+    font-weight: 200;
+    line-height: 30px;
+    padding-right: 20px;
+    margin-bottom: 0px;
+    text-align: left;
+}
+
+.body-wrapper .add-contact form .form-block .body .form .row.form-group .ui-select-choices .ui-options {
+    position: relative;
+}
+
+.body-wrapper .add-contact form .form-block .body .form .row.form-group .ui-select-choices .ui-options img {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.body-wrapper .add-contact form .form-block .body .form .row.form-group .ui-select-choices .ui-options .details {
+    width: 100%;
+    padding-left: 45px;
+}
+
+.body-wrapper .add-contact form .form-block .body .form .row.form-group .ui-select-choices .ui-options .details p {
+    margin-bottom: 0px;
+}
+
+.body-wrapper .add-contact form .form-block .body .form .row.form-group .label-wrapper {
+    position: relative;
+    height: 36px;
+}
+
+.body-wrapper .add-contact form .form-block .body .form .row.form-group .label-wrapper label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+    width: 100%;
+}
+
+.body-wrapper .add-contact form button {
+    min-width: 100px;
+    height: 35px;
+}
+
+.body-wrapper .add-contact form button.submit-btn {
+    margin-right: 10px;
+    background-color: #4ca8e9;
+    color: #fff;
+    border: 1px solid #4ca8e9;
+    border-radius: 2px;
+}
+
+.body-wrapper .add-contact form button.cancel-btn {
+    background-color: #f4f4f4;
+    color: #000;
+    border: 1px solid #bfbfbf;
+    border-radius: 2px;
+    font-weight: 200;
+}
+
+.body-wrapper .add-contact form .form-block .body .options .option .radio-inline {
+    position: absolute;
+    padding: 0px;
+    top: 0px;
+}
+
+.body-wrapper .add-contact form .form-block .body .options .option .option-details {
+    width: 100%;
+    padding-left: 30px;
+}
+
+.body-wrapper .add-contact form .form-block .body .options .option .option-details p {
+    font-size: 13px;
+    line-height: 13px;
+    margin-bottom: 8px;
+}
+
+.body-wrapper .add-contact form .form-block .body .options .option .option-details p.sub {
+    font-size: 11px;
+    font-weight: 200;
+    line-height: 12px;
+    color: #888;
+}
+
+.body-wrapper .add-contact form .form-block .body .stats {
+    border-left: 1px solid #d0d0d0;
+}
+
+.body-wrapper .add-contact form .form-block .body .stats .state {
+    position: relative;
+}
+
+.body-wrapper .add-contact form .form-block .body .stats .state p {
+    font-size: 13px;
+    margin-bottom: 4px;
+    width: 100%;
+    padding-left: 40px;
+    font-weight: 200;
+}
+
+.body-wrapper .add-contact form .form-block .body .stats .state p.number {
+    position: absolute;
+    width: 40px;
+    padding: 0px;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.body-wrapper .add-contact form .form-block .body {
+    max-width: 840px;
+}
+
+.body-wrapper .add-contact form .form-block.button-block .body {
+    padding-bottom: 0px;
+}
+
+.body-wrapper .add-contact form .form-block.button-block .body .form div {
+    margin-bottom: 0px!important;
+}
+
+.body-wrapper .add-contact form .form-block.button-block button {
+    margin-bottom: 10px;
+}
+
+.body-wrapper .add-contact form .form-block.button-block .error-msg p {
+    /*margin-bottom: 5px;*/
+    font-size: 13px;
+    line-height: 16px;
+    color: #ef6a6a;
+}
+
+sup {
+    top: -.3em;
+    font-size: 13px
+}
+
+
+/**Group**/
+
+.body-wrapper .add-contact.add-group form .form-block .body .form .row.form-group textarea {
+    height: 108px;
+    resize: none;
+    width: 100%;
+    padding: 6px 12px;
+}
+
+.body-wrapper .add-contact form .form-block .body .form .row.form-group.last-div div {
+    margin-bottom: 0px!important;
+}

@@ -1,0 +1,12 @@
+<div class="ui-grid-cell-contents name-cell">
+    <div class="dp-wrapper">
+        <img src="./resources/default-user.png">
+    </div>
+    <div class="details">
+        <p class="name">{{ COL_FIELD }}</p>
+        <p>
+            <span class="designation"> {{row.entity.Designation||'Not available'}}</span>
+            <span ng-if="row.entity.CompanyName">, </span><span class="designation"  ng-if="row.entity.CompanyName">{{row.entity.CompanyName||'Not available'}}</span></span>
+        </p>
+    </div>
+</div>

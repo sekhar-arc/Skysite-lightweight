@@ -1,0 +1,112 @@
+<div class="layout1" ng-init="vm.init()" ng-class="{'collapsed-menu':vm.isCollapsed}">
+    <div class="header-block">
+        <img src="./resources/theme/skysite-logo.png" class="logo-img">
+        <ul class="menu">
+            <li class="global-search">
+                <input type="text" name="" placeholder="Search">
+                <img src="./resources/search.png">
+            </li>
+            <!-- <li class="message-option">
+                <img src="./resources/meg.png">
+                <div class="badge">33</div>
+            </li>
+            <li class="notification-option">
+                <img src="./resources/notification2.png">
+                <div class="badge">33</div>
+            </li>
+            <li class="dashboard-option active">
+                <p>Dashboard</p>
+            </li>
+            <li class="contact-option">
+                <p>Contacts</p>
+            </li> -->
+            <li ng-repeat="option in  vm.headerMenuOption " class="{{option.class}}-option" ng-class="{'active': option.active}" ng-click='vm.gotoState(option)' tooltip-placement="bottom" uib-tooltip="{{option.name}}">
+                <!-- <img ng-if='option.icon' ng-src="{{option.icon}}">
+                <div class="badge" ng-if='option.badge && option.icon' ng-bind='option.badge'></div>
+                <p ng-if='!option.icon' ng-bind='option.name'></p> -->
+                <!-- <p ng-bind='option.name'></p> -->
+                <img class="option-icon-image" ng-if='option.icon' ng-src="{{option.icon}}">
+            </li>
+            <li class="other-option">
+                <img src="./resources/more-horizontal.png">
+            </li>
+        </ul>
+    </div>
+    <div class="body-block">
+        <div class="menu-block">
+            <div class="menu-header">
+                <div class="profile-info">
+                    <div class="pic-wrapper">
+                        <img src="./resources/himadri.jpg" class="profile-pic">
+                    </div>
+                    <div class="user-info">
+                        <p class="name">{{userName}}</p>
+                        <p class="designation">
+                            <span>India&nbsp; </span><span>Head, ARC</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="options">
+                    <button class="settings">
+                        <img src="./resources/settings.png">
+                        <span>Settings</span>
+                    </button>
+                    <button class="logout" ng-click="vm.doLogOut()">
+                        <img src="./resources/logout.png">
+                        <span>Logout</span>
+                    </button>
+                </div>
+            </div>
+            <!-- <div class="project-block">
+                <label> Project </label>
+                <div class="btn-group" uib-dropdown is-open="status.isopenProject">
+                    <button id="single-button" type="button" class="btn" uib-dropdown-toggle ng-disabled="disabled">
+                        <span ng-bind="vm.selectedProject.ProjectName"></span> <i class="caret"></i>
+                    </button>
+                    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <scrollable>
+                            <li role="menuitem" ng-repeat="option in vm.projects" ng-click="vm.selectedProject=option;vm.selectProject(option)">
+                                <a href="" ng-bind="option.ProjectName"></a>
+                            </li>
+                        </scrollable>
+                    </ul>
+                </div>
+            </div> -->
+            <div class="menu-options">
+                <scrollable>
+                    <ul>
+                        <li class="options" ng-repeat='option in vm.sideMenuOptions' ng-class="{'active': option.active}" ng-click='vm.gotoState(option)'>
+                            <a xui-sref="option.state">
+                                <div class="img-wrapper">
+                                    <img ng-src="{{option.icon}}">
+                                </div>
+                                <div class="details">
+                                    <span ng-bind='option.name'></span>
+                                    <div class="badge" ng-show='option.badge' ng-bind='option.badge'>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </scrollable>
+            </div>
+            <div class="menu-footer" ng-show="vm.isVisible">
+                <button class="{{vm.isCollapsed}}" ng-click='vm.isCollapsed = !vm.isCollapsed'>
+                    <img src="./resources/arrow-left-double.png">
+                </button>
+            </div>
+        </div>
+        <div class="main-block" ui-view></div>
+        <div class="footer">
+            <ul>
+                <li>Support</li>
+                <li>Help</li>
+                <li>Feedback</li>
+                <li>Terms &amp; Use</li>
+                <li>Utilities</li>
+            </ul>
+            <p>&copy; 2016 ARC Document Solutions</p>
+        </div>
+    </div>
+</div>

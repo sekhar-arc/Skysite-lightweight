@@ -1,0 +1,102 @@
+.theme-main-container .common-header {
+    height: 50px;
+    border-bottom: 1px solid #eee;
+}
+
+.theme-main-container .common-header .logo-img {
+    height: 30px;
+    margin: 10px 0px 10px 30px;
+}
+
+.theme-step1-container {
+    margin-top: 40px;
+    color: #555;
+}
+
+.theme-step1-container .theme-select div {
+    display: inline-block;
+    padding: 10px 20px 10px 45px;
+    border-radius: 20px;
+    border: 1px solid #4ca7e9;
+    background-image: url('../../resources/theme/tick2.png');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 15px;
+}
+
+.theme-step1-container .welcome-text {
+    margin-top: 40px;
+}
+
+.theme-step1-container .welcome-text .name {
+    color: #4ca7e9;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.theme-step1-container .own-theme-btn {
+    margin-top: 40px;
+}
+
+.theme-step1-container .own-theme-btn .create-btn {
+    background-color: #4ca7e9;
+    font-size: 16px;
+    border-top: 0px;
+    border-bottom: 2px solid #1B7B8A;
+    border-right: 0px;
+    border-radius: 5px;
+    border-left: 0px;
+    padding: 12px 25px;
+}
+
+.theme-step1-container p.pick {
+    margin-top: 60px;
+    font-size: 20px;
+    color: #555;
+}
+
+.theme-step1-container .template-selection-row {
+    margin-top: 30px;
+}
+
+.theme-step1-container .template-selection-row .template-img {
+    max-width: 350px;
+    width: 100%;
+}
+
+.theme-step1-container .template-selection-row p {
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.theme-step1-container .template-img-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.theme-step1-container .template-img-container .theme-selected-tick {
+    position: absolute;
+    bottom: 60px;
+    left: 30px;
+    width: 25px;
+    opacity: 0;
+    transition: all 0.6s;
+}
+
+.theme-step1-container .template-img-container:hover .theme-selected-tick {
+    opacity: 0.3;
+    bottom: 80px;
+}
+
+.theme-step1-container .template-img-container.selected .theme-selected-tick {
+    opacity: 0.9;
+    bottom: 80px;
+}
+
+.custom-template-breadcrumb .breadcrumb {
+    margin-bottom: 0px;
+}
+
+.custom-template-breadcrumb .breadcrumb .active {
+    color: #777 !important;
+}

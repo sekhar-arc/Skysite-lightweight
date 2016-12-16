@@ -1,0 +1,10 @@
+<div class="modal-header" ng-init="vm.init()">
+</div>
+<div class="modal-body delete-confirm" id="modal-body">
+    <p class="delete-confirm-message" ng-if="vm.fileCount>1">Are you sure you want to delete {{vm.fileCount}} files?</p>
+    <p class="delete-confirm-message" ng-if="vm.fileCount==1">Are you sure you want to delete this file?</p>
+</div>
+<div class="modal-footer delete-confirm">
+    <button class="btn btn-primary delete-confirm-btn btn-yes" type="button" ng-click="vm.save()">Yes</button>
+    <button class="btn btn-warning delete-confirm-btn btn-no" type="button" ng-click="vm.cancel()">No</button>
+</div>

@@ -1,0 +1,696 @@
+.contact {
+    background-color: #e4f2fd;
+    padding: 5px 15px;
+}
+
+
+/* Head */
+
+.contact .header {}
+
+.contact .header p.heading {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 200;
+    padding: 0px 0 0px;
+    line-height: 40px;
+    margin-bottom: 5px;
+}
+
+
+/* Body */
+
+.contact .body-container {
+    height: calc(100% - 55px);
+}
+
+.contact .body-container .header {
+    padding: 10px 0;
+    background-color: #fff;
+    border-bottom: 1px solid #dfdfdf;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.contact .body-container .header .search-field {
+    width: 22.5%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    padding-left: 10px;
+}
+
+.contact .body-container .header .search-field input {
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: 0px;
+    background-color: #f5f5f5;
+    padding: 5px 10px;
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.contact .body-container .header .search-field img,
+.contact .body-container .header .search-field i {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    height: 15px;
+    width: 15px;
+}
+
+.contact .body-container .header .other-fields {
+    display: inline-block;
+    width: 77.5%;
+    vertical-align: top;
+    height: 30px;
+    padding: 0px 10px 0px 20px;
+}
+
+.contact .body-container .header .other-fields button {
+    outline: none;
+    border: 0px;
+    background: transparent;
+    height: 30px;
+    font-size: 13px;
+    line-height: 30px;
+    color: #3b7ba9;
+}
+
+.contact .body-container .header .other-fields button.active .under-line {
+    width: 50px;
+    height: 2px;
+    background-color: blue;
+    margin: 0 auto;
+    transition: all 0.5s;
+    position: relative;
+    bottom: -8px;
+}
+
+.contact .body-container .header .other-fields .left-btns {
+    float: left;
+    /*display: inline-block;*/
+    min-width: 70%;
+}
+
+.contact .body-container .header .other-fields .left-btns button {
+    padding: 0 2%;
+}
+
+.contact .body-container .header .other-fields .right-btn {
+    float: right;
+}
+
+.contact .body-container .header .other-fields .right-btn button {
+    position: relative;
+    padding-left: 22px;
+}
+
+.contact .body-container .header .other-fields .right-btn button img {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 8px;
+    left: 0;
+}
+
+
+/*boy-container body*/
+
+.contact .body-container .body {
+    height: calc(100% - 51px);
+}
+
+.contact .body-container .body .body-wrapper {
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+}
+
+.contact .body-container .body .body-wrapper .contact-list {
+    width: 22.5%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    border-right: 1px solid #d6d6d6;
+}
+
+.contact .body-container .body .body-wrapper .contact-list .list {
+    width: 100%;
+    height: 100%;
+    padding-right: 25px;
+}
+
+.contact .body-container .body .body-wrapper .contact-list .list .nano>.nano-pane {
+    background-color: #d5d5d5;
+}
+
+.contact .body-container .body .body-wrapper .contact-list .list .alphabet-contact-wrapper {
+    border-right: 3px solid #d6d6d6;
+}
+
+.contact .body-container .body .body-wrapper .contact-list .list .alphabet-contact-wrapper .alphabet-divider {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0px 10px;
+    background-color: #e4e4e4;
+}
+
+.contact .body-container .body .body-wrapper .contact-list .list .alphabet-contact-wrapper .user {
+    padding: 10px 5px 10px 15px;
+    width: 100%;
+    border-bottom: 1px solid #d6d6d6;
+    position: relative;
+    min-height: 60px;
+    cursor: pointer;
+}
+
+.contact .body-container .body .body-wrapper .contact-list .list .alphabet-contact-wrapper .user .dp-wrapper {
+    position: absolute;
+    top: 10px;
+}
+
+.contact .body-container .body .body-wrapper .contact-list .list .alphabet-contact-wrapper .user .dp-wrapper img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.contact .body-container .body .body-wrapper .contact-list .list .alphabet-contact-wrapper .user .details {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 15px;
+    vertical-align: top;
+}
+
+.contact .body-container .body .body-wrapper .contact-list .list .alphabet-contact-wrapper .user .details p {
+    margin-bottom: 0px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.contact .body-container .body .body-wrapper .contact-list .list .alphabet-contact-wrapper .user .details img.arrow-right {
+    height: 12px;
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    position: absolute;
+    top: 42%;
+    right: 7px;
+    display: none;
+}
+
+.contact .body-container .body .body-wrapper .contact-list .list .alphabet-contact-wrapper .user.selected-contact {
+    background-color: #fbfbfb;
+}
+
+.contact .body-container .body .body-wrapper .contact-list .list .alphabet-contact-wrapper .user.selected-contact .details img.arrow-right {
+    display: block!important;
+}
+
+.contact .body-container .body .body-wrapper .contact-list .list .alphabet-contact-wrapper .user .details p.name {
+    /*margin-bottom: 5px;*/
+}
+
+.contact .body-container .body .body-wrapper .contact-list .list .alphabet-contact-wrapper .user .details p.info {
+    font-size: 12px;
+    line-height: 14px;
+    color: #777;
+}
+
+.contact .body-container .body .body-wrapper .contact-list .sort-alphabet {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    overflow: auto;
+    padding: 10px 0;
+    width: 25px;
+    background-color: #fefefe;
+}
+
+.contact .body-container .body .body-wrapper .contact-list .sort-alphabet .alphabet {
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    color: #888;
+    font-weight: 200;
+    cursor: pointer;
+}
+
+.contact .body-container .body .body-wrapper .contact-list .sort-alphabet .alphabet button {
+    outline: none;
+    border: 0px;
+    background: transparent;
+    color: #337ab7;
+    width: 100%;
+    padding: 0px;
+}
+
+button[disabled="disabled"] {
+    cursor: not-allowed;
+}
+
+.contact .body-container .body .body-wrapper .contact-list .sort-alphabet .alphabet button:hover {
+    color: #fbfbfb;
+}
+
+.contact .body-container .body .body-wrapper .contact-list .sort-alphabet .alphabet:hover {
+    color: #fff;
+    background-color: #4ca6e4;
+}
+
+.contact .body-container .body .body-wrapper .contact-list .sort-alphabet .nano>.nano-pane {
+    background-color: #888;
+    width: 0px;
+}
+
+.contact .body-container .body .body-wrapper .contact-dynamic-container {
+    width: 77.5%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.contact .body-container .body .body-wrapper .contact-dynamic-container>div {
+    width: 100%;
+    height: 100%;
+}
+
+.contact .body-container .body .body-wrapper .contact-details {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .user-info {
+    width: 29%;
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    padding: 0 2%;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .user-info .nano>.nano-pane {
+    display: none!important;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .user-info .info-header {}
+
+.contact .body-container .body .body-wrapper .contact-details .user-info .info-header .dp {
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+    padding-top: 15px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .user-info .info-header .dp .more-btn {
+    outline: none;
+    border: 0px;
+    background: transparent;
+    position: absolute;
+    top: 15px;
+    right: 0;
+    width: 14px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .user-info .info-header .dp .more-btn button {
+    border: 0px;
+    padding: 0 5px;
+    background: transparent;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .user-info .info-header .dp img.profile-pic {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .user-info .info-header .name-designation-block,
+.contact .body-container .body .body-wrapper .contact-details .user-info .info-header .action {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .user-info .info-header .name-designation-block p {
+    margin-bottom: 0px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .user-info .info-header .name-designation-block p.name {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .user-info .info-header .name-designation-block p.designation {
+    font-size: 13px;
+    font-weight: 200;
+    line-height: 16px;
+    color: #777;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .user-info .info-header .action button {
+    outline: none;
+    border: 0px;
+    background: transparent;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .user-info .user-contacts {
+    border-top: 1px solid #cbcbcb;
+    border-bottom: 1px solid #cbcbcb;
+    margin-bottom: 20px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .user-info .user-contacts.ng-scope p {
+    margin-bottom: 0px;
+    display: inline-block;
+    width: 50%;
+    line-height: 40px;
+    color: #777;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .user-info .user-contacts.ng-scope p span {
+    color: #3b7ba9;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 40px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .user-info .user-contacts.ng-scope p.add-member {
+    text-align: right;
+    font-size: 13px;
+    color: #3b7ba9;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .user-info .user-contacts.ng-scope p.group-count {
+    width: 100%;
+    text-align: center;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .user-info .information {
+    padding: 10px 0px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .user-info .information .info-row label {
+    margin-bottom: 0px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #777;
+    line-height: 15px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream,
+.contact .body-container .body .body-wrapper .contact-details .members-list {
+    width: 71%;
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    padding: 15px 0;
+    /*border-left: 1px solid #cbcbcb;*/
+}
+
+
+/*Recent Activity*/
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity,
+.contact .body-container .body .body-wrapper .contact-details .members-list .list-wrapper {
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    vertical-align: top;
+    padding: 0 5px 10px 10px;
+    height: 100%;
+    border-left: 1px solid #cbcbcb;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity .title {
+    padding: 0 10px 10px;
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 22px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity .title p {
+    margin-bottom: 0;
+    font-weight: 200;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity .activity-wrapper {
+    margin: 5px 0;
+    height: calc(100% - 38px);
+}
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity .activity-wrapper .day-activity {
+    margin-bottom: 15px;
+    padding-right: 20px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity .activity-wrapper .day-activity .date-time,
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity .activity-wrapper .day-activity .activities {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity .activity-wrapper .day-activity .date-time .date {
+    line-height: 18px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity .activity-wrapper .day-activity .date-time {
+    width: 16%;
+    padding-top: 20px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity .activity-wrapper .day-activity .activities {
+    width: 83%;
+    padding: 20px 15px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-left: 3px solid #4aa3e4;
+    border-radius: 3px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    font-size: 13px;
+    color: #333;
+    box-shadow: 2px 0px 8px 0px rgba(0, 0, 0, .06);
+}
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity .activity-wrapper .day-activity .date-time>div {
+    text-align: center;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity .activity-wrapper .day-activity .date-time .date .number {
+    font-size: 20px;
+    margin-right: 4px
+}
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity .activity-wrapper .day-activity .date-time .date .text {
+    font-size: 13px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity .activity-wrapper .day-activity .date-time .year {
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity .activity-wrapper .day-activity .date-time .day {
+    font-size: 12px;
+    font-weight: normal;
+    color: #666;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity .activity-wrapper .activities .activity {
+    position: relative;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity .activity-wrapper .activities .activity .bullet {
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: #a8a8a8;
+    position: absolute;
+    top: 7px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity .activity-wrapper .activities .activity .details {
+    width: 100%;
+    padding: 0 10px 0 20px;
+    margin-bottom: 10px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity .activity-wrapper .activities .activity .details p {
+    margin-bottom: 0px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity .activity-wrapper .activities .activity .details .file-list .file {
+    margin: 5px 0;
+    position: relative;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity .activity-wrapper .activities .activity .details .file-list .file .extension {
+    vertical-align: top;
+    border-radius: 50%;
+    background-color: #dc6f00;
+    color: #fff;
+    height: 20px;
+    width: 20px;
+    font-size: 8px;
+    text-align: center;
+    line-height: 20px;
+    position: absolute;
+    top: 1px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .activity-stream .recent-activity .activity-wrapper .activities .activity .details .file-list .file .name {
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-left: 25px;
+}
+
+
+/**/
+
+.contact .body-container .body .body-wrapper .contact-details .members-list .list-wrapper .title {}
+
+.contact .body-container .body .body-wrapper .contact-details .members-list .list-wrapper .title p.text {
+    display: inline-block;
+    margin-bottom: 0px;
+    line-height: 33px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .members-list .list-wrapper .title .field {
+    position: relative;
+    display: inline-block;
+    /*margin-right: 10px;*/
+    font-size: 13px;
+    vertical-align: top;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .members-list .list-wrapper {
+    padding-right: 10px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .members-list .list-wrapper .title .field .pagination {
+    margin: 0;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .members-list .list-wrapper .title .field .pagination>li>a {
+    font-size: 13px;
+    border: 0;
+    color: #888;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .members-list .list-wrapper .title .field .pagination>li>a:hover {
+    border-radius: 50%;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .members-list .list-wrapper .title .field .pagination>li.active>a {
+    background-color: #eaeaea;
+    border-radius: 50%;
+    color: #000;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .members-list .list-wrapper .title .field.per-page-field .dropdown button {
+    font-size: 13px;
+    height: 28px;
+    line-height: 13px;
+    text-align: right;
+    background-color: #f5f5f5;
+    background: 0 0;
+    min-width: 115px;
+    color: #888;
+    padding-right: 1px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .members-list .list-wrapper .title .field.per-page-field .dropdown .dropdown-menu>li>a {
+    color: #888;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .members-list .list-wrapper .title .field.per-page-field .dropdown-menu {
+    right: 0;
+    left: auto;
+}
+
+
+/* Name Cell */
+
+.contact .body-container .body .body-wrapper .contact-details .members-list .list-wrapper .name-cell {
+    padding: 0;
+    position: relative;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .members-list .list-wrapper .name-cell .dp-wrapper {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .members-list .list-wrapper .name-cell .dp-wrapper img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .members-list .list-wrapper .name-cell .details {
+    width: 100%;
+    padding: 10px 0 10px 55px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .members-list .list-wrapper .name-cell .details p {
+    margin: 0px;
+    width: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    height: 20px;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .members-list .list-wrapper .name-cell .details p.name {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .members-list .list-wrapper .name-cell .details p span.designation {
+    color: #777;
+}
+
+.contact .body-container .body .body-wrapper .contact-details .members-list .list-wrapper .file-list-view {
+    height: calc(100% - 33px);
+}
+
+
+/**/
+
+
+/* Options */
+
+.dropdown-menu.options li a {
+    padding: 3px 0px;
+}
+
+.dropdown-menu.options li a>div {
+    padding: 0 20px;
+    font-size: 13px;
+    line-height: 20px;
+    position: relative;
+}
+
+.dropdown-menu.options li a>div img {
+    height: 16px;
+    position: absolute;
+    top: 2px;
+}
+
+.dropdown-menu.options li a>div p {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0px;
+}

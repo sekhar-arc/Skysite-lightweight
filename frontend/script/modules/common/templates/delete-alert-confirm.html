@@ -1,0 +1,15 @@
+<div class="modal-header">
+</div>
+<div class="modal-body" id="modal-body">
+    <p ng-if="vm.hasChild">
+        Removing this folder would delete all files/folders present inside this folder.
+        <br> <b>Do you want to continue?</b>
+    </p>
+    <p ng-if="!vm.hasChild">
+        <b>Remove empty folder?</b>
+    </p>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="vm.save()">Yes</button>
+    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">No</button>
+</div>

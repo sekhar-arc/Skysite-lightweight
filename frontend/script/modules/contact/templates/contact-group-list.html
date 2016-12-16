@@ -1,0 +1,32 @@
+<div class="contact-list" ng-init="vm.init()">
+    <div class="list">
+        <scrollable scrolly='showMore()'>
+            <div class="alphabet-contact-wrapper" ng-repeat="option in vm.formattedList" ng-if="option.contacts.length">
+                <div class="alphabet-divider {{option.alphabet}}" id="{{option.aphabet}}">
+                    <span ng-bind='option.alphabet'></span>
+                </div>
+                <div class="user" ng-repeat="contact in option.contacts" ng-class="{'selected-contact':(vm.selected.isGroup)?((vm.selected.PWGroupID)?(contact.PWGroupID===vm.selected.PWGroupID):false):((vm.selected.PWContactID)?(contact.PWContactID===vm.selected.PWContactID):false)}" ng-click="vm.getInfo(contact)">
+                    <div class="dp-wrapper">
+                        <img ng-src='{{(contact.isGroup)?"./resources/default-group-image.png":"./resources/default-user.png"}}'>
+                    </div>
+                    <div class="details">
+                        <p class="name" ng-bind='(contact.isGroup)?contact.GroupName:contact.ContactName'></p>
+                        <p class="info" ng-hide="contact.isGroup"><span ng-bind='contact.designation||"No Designation Found"'></span><span ng-if="contact.organization">, <span ng-bind="contact.organization"></span></span>
+                        </p>
+                        <p class="info" ng-show="contact.isGroup"><span ng-bind='contact.membersCount'></span> members</p>
+                        <img src="./resources/arrow-left.png" class="arrow-right">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center {{vm.isCall}}" ng-hide='vm.isCall'><i class="fa fa-spinner fa-spin"></i></div>
+        </scrollable>
+    </div>
+    <div class="sort-alphabet">
+        <scrollable>
+            <div class="alphabet" ng-repeat='option in vm.formattedList' ng-click='vm.scrollAlphabetList(option.alphabet,$index)' ng-disabled='option.contacts.length'>
+                <!-- <a><span ng-bind='option.alphabet'></span></a> -->
+                <button ng-disabled='!option.contacts.length'><span ng-bind='option.alphabet'></button>
+            </div>
+        </scrollable>
+    </div>
+</div>

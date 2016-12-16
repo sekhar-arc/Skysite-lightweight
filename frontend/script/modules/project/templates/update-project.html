@@ -1,0 +1,147 @@
+<div class="modal-header" ng-init="vm.init()">
+    <h3 class="text-center modal-title" id="modal-title">Edit Project</h3>
+</div>
+<div class="modal-body project-edit-modal" id="modal-body">
+    <uib-tabset active="active" vertical="true">
+        <uib-tab index="0" heading="Project Info">
+            <form class="form-horizontal">
+                <div class="row form-group">
+                    <label class="control-label col-sm-2" for="name">Project Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name" placeholder="Project Name" ng-model="vm.project.ProjectName">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-2" for="projno">Project No</label>
+                    <div class="col-sm-4 padding-right-0">
+                        <input type="text" class="form-control" id="projno" placeholder="Project No" ng-model="vm.project.ProjectNumber">
+                    </div>
+                    <label class="control-label col-sm-2 date-label" for="name">Start Date</label>
+                    <div class="col-sm-4 date-field-fix">
+                        <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="property.opened" datepicker-options="dateOptions" ng-required="true" show-button-bar="false" close-text="Close" />
+                        <span class="input-group-btn calendar-icon">
+                            <button type="button" class="btn btn-default" ng-click="open(property)"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-2" for="desc">Description</label>
+                    <div class="col-sm-10">
+                        <textarea ng-model="vm.project.ProjectDescription" class="form-control" placeholder="Description"></textarea>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-2" for="address">Address</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="address" placeholder="Address" ng-model="vm.project.ProjectAddress1">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-2" for="city">City</label>
+                    <div class="col-sm-4 padding-right-0">
+                        <input type="text" class="form-control" id="city" placeholder="City" ng-model="vm.project.City">
+                    </div>
+                    <label class="control-label col-sm-2 pin-label" for="pincode">Pin</label>
+                    <div class="col-sm-4 padding-right-0">
+                        <input type="text" class="form-control" id="pincode" placeholder="Pincode" ng-model="vm.project.Zip">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-2" for="country">Country</label>
+                    <div class="col-sm-4 padding-right-0">
+                        <select type="text" class="form-control" id="country" ng-options="option.CountryName for option in vm.countryList track by option.CountryID" ng-change="vm.getStateList(vm.country, vm)" ng-model="vm.country">
+                        </select>
+                    </div>
+                    <label class="control-label col-sm-2 pin-label" for="state">State</label>
+                    <div class="col-sm-4 padding-right-0">
+                        <select type="text" class="form-control" id="state" placeholder="State" ng-options="option.StateName for option in vm.stateList track by option.StateID" ng-model="vm.state">
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group text-right bottom-button-panel">
+                    <div class="col-sm-12">
+                        <button class="btn save-btn" ng-click="vm.editProject()">Save</button>
+                        <button class="btn cancel-btn" ng-click="vm.cancel()">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </uib-tab>
+        <uib-tab index="1" heading="Project Owner">
+            <form class="form-horizontal">
+                <div class="row form-group">
+                    <label class="control-label col-sm-2" for="owner_first">First Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="owner_first" placeholder="First Name" ng-model="vm.project.ProjectOwner.FirstName">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-2" for="owner_last">Last Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="owner_last" placeholder="Last Name" ng-model="vm.project.ProjectOwner.LastName">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-2" for="company">Company</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="company" placeholder="Company" ng-model="vm.project.ProjectOwner.CompanyName">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-2" for="email">Email</label>
+                    <div class="col-sm-4 padding-right-0">
+                        <input type="email" class="form-control" id="email" placeholder="Email" ng-model="vm.project.ProjectOwner.Email">
+                    </div>
+                    <label class="control-label col-sm-2 pin-label" for="cell">Cell</label>
+                    <div class="col-sm-4 padding-right-0">
+                        <input type="text" class="form-control" id="cell" placeholder="Cell" ng-model="vm.project.ProjectOwner.PhoneMobile">
+                    </div>
+                </div>
+                <div class="horizontal-form-line">
+                </div>
+                <div class="replace-area row form-group">
+                    <p class="col-sm-12">Once the new project owner is selected, edit privilege of this project will pass on the new owner</p>
+                </div>
+                <div class="row form-group text-right bottom-button-panel">
+                    <div class="col-sm-12">
+                        <button class="btn save-btn">Save</button>
+                        <button class="btn cancel-btn" ng-click="vm.cancel()">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </uib-tab>
+        <uib-tab index="2" heading="Invite">
+            <form class="form-horizontal">
+                <div class="row form-group">
+                    <label class="control-label col-sm-12 text-left invite-label" for="owner_first">Project Invitation Message</label>
+                    <div class="col-sm-12 invite-col-sm">
+                        <textarea class="form-control" placeholder="Message"></textarea>
+                    </div>
+                </div>
+                <div class="row form-group text-right bottom-button-panel bottom-adust">
+                    <div class="col-sm-12">
+                        <button class="btn save-btn">Send invitation</button>
+                        <button class="btn cancel-btn" ng-click="vm.cancel()">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </uib-tab>
+        <uib-tab index="3" heading="Settings">
+            <form class="form-horizontal">
+                <div class="row form-group">
+                    <label class="control-label col-sm-2" for="owner_first">Project Status</label>
+                    <div class="col-sm-7">
+                        <select class="form-control project-status-select">
+                            <option>Active</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group text-right bottom-button-panel bottom-adust">
+                    <div class="col-sm-12">
+                        <button class="btn save-btn">Save</button>
+                        <button class="btn cancel-btn" ng-click="vm.cancel()">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </uib-tab>
+    </uib-tabset>
+</div>

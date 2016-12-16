@@ -1,0 +1,38 @@
+<div class="contact theme1" ng-init="vm.init()">
+    <div class="header">
+        <p class="heading">My Contacts (38)</p>
+        <!--  <div class="change-view">
+            <span>View</span>
+            <button ></button>
+        </div> -->
+    </div>
+    <div class="body-container">
+        <div class="header">
+            <div class="search-field">
+                <input type="text" name="" placeholder="Search Contact/Group" ng-model="vm.searchKey" ng-change='vm.refreshContactList()'>
+                <img src="./resources/search.png" ng-if='!vm.searchIsInProgress && !vm.searchedList'>
+                <!-- <i class="fa fa-spinner fa-spin" ng-if='vm.searchIsInProgress'></i>
+                <i class="fa fa-times" ng-if='vm.searchedList && !vm.searchIsInProgress' ng-click='vm.clearSearch()'></i> -->
+                <i class="fa" ng-class='{"fa-spinner fa-spin":vm.searchIsInProgress , "fa-times":vm.searchedList}' ng-click='vm.clearSearch()'></i>
+            </div>
+            <div class="other-fields">
+                <div class="left-btns">
+                    <button ng-class='{"active" : vm.activeBtn==="AddContact"}' ng-click="vm.gotoState('authenticated.layout.contact.thumbnail.addContact')">ADD CONTACT
+                        <div class="under-line"></div>
+                    </button>
+                    <button ng-class='{"active" : vm.activeBtn==="AddGroup"}' ng-click="vm.gotoState('authenticated.layout.contact.thumbnail.addGroup')">CREATE GROUP
+                        <div class="under-line"></div>
+                    </button>
+                    <button>IMPORT CONTACTS
+                        <div class="under-line"></div>
+                    </button>
+                </div>
+                <div class="right-btn">
+                    <button><img src="./resources/export_hover.png">EXPORT CONTACTS</button>
+                </div>
+            </div>
+        </div>
+        <div class="body" ui-view>
+        </div>
+    </div>
+</div>

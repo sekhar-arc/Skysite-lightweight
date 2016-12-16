@@ -1,0 +1,175 @@
+<div class="project doc-container" ng-init='vm.init()'>
+    <div class="general-upload-header row">
+        <div class="col-sm-6 text-left">
+        </div>
+        <div class="col-sm-6 text-right">
+            <div class="right-header-container">
+                View
+                <button class="grid-view-btn view-btn" ng-class="{'view-active': isGrid}" ng-click="isGrid = true">
+                </button>
+                <span class="ver-divider"> |
+
+                </span>
+                <button class="list-view-btn view-btn" ng-class="{'view-active': !isGrid}" ng-click="isGrid = false">
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="header">
+        <div class="sort-field field">
+            <label class="field-label"> Sort by </label>
+            <div class="btn-group" uib-dropdown is-open="status.isopenSort">
+                <button id="single-button" type="button" class="btn" uib-dropdown-toggle ng-disabled="disabled">
+                    <span ng-bind="vm.sortOption.text"></span> <i class="caret"></i>
+                </button>
+                <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                    <li role="menuitem" ng-repeat="option in vm.sortOptions" ng-click="vm.sortOption=option;vm.filterProjectList(option)">
+                        <a href="" ng-bind="option.text"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="search-field field">
+            <label class="field-label"> Search Project </label>
+            <input type="text" name="" class="input-field" placeholder="Project name" ng-model='vm.searchKey' ng-change='vm.searchProject()'>
+            <button class="cross-btn" ng-show='vm.searchKey' ng-click="vm.searchKey='';vm.searchProject()"><i class="fa fa-times"></i></button>
+        </div>
+        <div class="pull-right double-line">
+            <div class="field button-group">
+                <button uib-tooltip="Create Project"><img src="./resources/filter.png"></button>
+            </div>
+            <div class="field pagination-field">
+                <ul uib-pagination boundary-links="true" total-items="vm.totalCount" ng-model="vm.pageNo" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" max-size='3' ng-change="vm.pageChanged()" items-per-page="vm.perPageItem.value"></ul>
+            </div>
+            <div class="per-page-field field">
+                <div class="btn-group" uib-dropdown is-open="status.isopenPerPage">
+                    <button id="single-button" type="button" class="btn" uib-dropdown-toggle ng-disabled="disabled">
+                        <span ng-bind="vm.perPageItem.text"></span> <i class="caret"></i>
+                    </button>
+                    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button" ng-model='vm.perPageItem'>
+                        <li role="menuitem" ng-repeat='item in vm.perPageItemList' ng-click="vm.perPageItem=item;vm.changePerPageCount(item)">
+                            <a href="" ng-bind="item.text"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="body-margin">
+            <div class="project-wrapper create-project">
+                <div class="each-project">
+                    <div class="project-img">
+                        <img src="">
+                        <div class="add-img">
+                            <div>
+                                <!-- <i class="fa fa-plus"></i> -->
+                                <img src="./resources/plus.png">
+                                <p>Add Project Image{{vm.totalCount}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <div class="details-header">
+                            <input type="text" name="" placeholder="Enter project name" class="project-name" ng-model='vm.projectName'>
+                            <!-- <p class="project-name">Project Name</p>
+                            <span class="project-bookmark" uib-rating ng-model="rate" max="max" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></span> -->
+                        </div>
+                        <div class="details-body">
+                            <!-- <div class="details-row">
+                                <label class="project-label">Owner</label>
+                                <input type="" name="" placeholder="Name" class="project-value">
+                            </div> -->
+                            <div class="details-row country-field">
+                                <label class="project-label">Country</label>
+                                <div class="btn-group" uib-dropdown is-open="status.isopenCountryList">
+                                    <button id="single-button" type="button" class="btn" uib-dropdown-toggle ng-disabled="disabled">
+                                        <span ng-bind="vm.country.CountryName"></span> <i class="caret"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                                        <li role="menuitem" ng-repeat="option in vm.countryList" ng-click="vm.country=option;vm.getStateList(option)">
+                                            <a href="" ng-bind="option.CountryName"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- <label class="field select">
+                                    <select name="repeatSelect" id="country" ng-model="vm.country" ng-init="vm.country = vm.countryList[0]" ng-change='vm.getStateList(vm.country.CountryID)'>
+                                        <option ng-repeat="option in vm.countryList" value='{{option}}' >
+                                            {{option.CountryName}}
+                                        </option>
+                                    </select>
+                                    <i class="arrow"></i>
+                                </label> -->
+                            </div>
+                            <div class="details-row state-field">
+                                <label class="project-label">State</label>
+                                <div class="btn-group" uib-dropdown is-open="status.isopenStateList">
+                                    <button id="single-button" type="button" class="btn" uib-dropdown-toggle xng-disabled="vm.stateList.length">
+                                        <span ng-bind="vm.state.StateName"></span> <i class="caret"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                                        <li role="menuitem" ng-repeat="option in vm.stateList" ng-click="vm.state=option;vm.filterProjectList(option)">
+                                            <a href="" ng-bind="option.StateName"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- <label class="field select">
+                                    <select name="repeatSelect" id="country" ng-model="vm.state" ng-init="vm.state = vm.stateList[0]">
+                                        <option ng-repeat="option in vm.stateList" value='{{option}}'>
+                                            {{option.StateName}}
+                                        </option>
+                                    </select>
+                                    <i class="arrow"></i>
+                                </label> -->
+                            </div>
+                            <div class="btn-wrapper">
+                                <button ng-click='vm.createNewProject()'>Create Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-wrapper" ng-repeat="project in vm.projects" context-menu="projectMenuOptions(project, $index)">
+                <div class="each-project">
+                    <div class="project-img">
+                        <img src="./resources/download.jpg" style="width:200px;height:130px;" ng-if='project.coverImage'>
+                        <div class="add-img" ng-if='!project.coverImage'>
+                            <div>
+                                <i class="fa fa-plus"></i>
+                                <p>Add Project Image</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-details" ng-click="vm.selectProject(project)">
+                        <div class="details-header">
+                            <p class="project-name">{{project.details.ProjectName}}</p>
+                            <span class="project-bookmark" uib-rating ng-model="project.IsFavorite" max="1" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['Mark As Favourite']" aria-labelledby="default-rating" ng-click='vm.makeItFavourite(project)'></span>
+                        </div>
+                        <div class="details-body">
+                            <div class="details-row">
+                                <label class="project-label">Owner</label>
+                                <span class="project-value">{{project.ProjectOwner.FirstName}} {{project.ProjectOwner.LastName}}</span>
+                            </div>
+                            <!--  <div class="details-row">
+                                <label class="project-label">Access</label>
+                                <span class="project-value">General Manager</span>
+                            </div> -->
+                            <div class="details-row">
+                                <label class="project-label">Storage</label>
+                                <span class="project-value"></span>
+                            </div>
+                            <div class="details-row">
+                                <label class="project-label">Country</label>
+                                <span class="project-value">{{project.details.CountryName}}</span>
+                            </div>
+                            <div class="details-row">
+                                <label class="project-label">State</label>
+                                <span class="project-value">{{project.details.StateName}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

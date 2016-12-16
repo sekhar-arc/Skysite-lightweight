@@ -1,0 +1,307 @@
+<div ng-init="vm.init()">
+    <div class="contact-details" ng-if='vm.selectContactDetails && !vm.isGroupSelected'>
+        <div class="user-info">
+            <scrollable>
+                <div class="info-header">
+                    <div class="dp">
+                        <img src="./resources/default-user.png" class="profile-pic">
+                        <!--  <button class="more-btn"><img src="./resources/more.png"></button> -->
+                        <div class="btn-group  more-btn" uib-dropdown dropdown-append-to-body>
+                            <button id="btn-append-to-body" type="button" class="btn btn-primary" uib-dropdown-toggle>
+                                <img src="./resources/more.png">
+                            </button>
+                            <ul class="dropdown-menu options" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
+                                <li role="menuitem">
+                                    <a xui-sref=''>
+                                        <div>
+                                            <img src="./resources/export.png">
+                                            <p> Export</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li role="menuitem">
+                                    <a href="#" ui-sref='authenticated.layout.contact.thumbnail.editContact({id:vm.selectContactDetails.PWContactID})'>
+                                        <div>
+                                            <img src="./resources/edit.png">
+                                            <p> Edit</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li role="menuitem">
+                                    <a href="#">
+                                        <div>
+                                            <img src="./resources/delete2.png">
+                                            <p> Delete</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="name-designation-block">
+                        <p class="name" ng-bind="vm.selectContactDetails.ContactName"></p>
+                        <p class="designation" ng-bind='vm.selectContactDetails.Occupation.PropertyID|occupationFilter'>Angular Developer</p>
+                    </div>
+                    <div class="action">
+                        <button uib-tooltip="Send Message"><img src="./resources/meg.png"></button>
+                    </div>
+                </div>
+                <div class="user-contacts">
+                    <p class="group-count"><span>4</span> groups</p>
+                </div>
+                <div class="information">
+                    <div class="info-row">
+                        <label>Company</label>
+                        <p ng-bind='vm.selectContactDetails.CompanyName ||  vm.notAvailable'>
+                        </p>
+                    </div>
+                    <div class="info-row">
+                        <label>Role</label>
+                        <p>Employee</p>
+                    </div>
+                    <div class="info-row">
+                        <label>Email</label>
+                        <p ng-bind="vm.selectContactDetails.Email ||  vm.notAvailable">
+                        </p>
+                    </div>
+                    <div class="info-row">
+                        <label>Mobile</label>
+                        <p ng-bind="vm.selectContactDetails.contactNo ||  vm.notAvailable">
+                        </p>
+                    </div>
+                    <div class="info-row">
+                        <label>Link</label>
+                        <p ng-bind="vm.selectContactDetails.WebURL ||  vm.notAvailable ">
+                        </p>
+                    </div>
+                </div>
+            </scrollable>
+        </div>
+        <div class="activity-stream">
+            <div class="recent-activity">
+                <div class="title">
+                    <p>Activity Stream</p>
+                </div>
+                <div class="activity-wrapper">
+                    <scrollable>
+                        <div class="day-activity">
+                            <div class="date-time">
+                                <div class="date"> <span class="number">25</span><span class="text">Oct</span></div>
+                                <div class="year">2016</div>
+                                <div class="day">Monday</div>
+                            </div>
+                            <div class="activities">
+                                <div class="activity">
+                                    <div class="bullet"></div>
+                                    <div class="details">
+                                        <p>You have created a project Office Decoration.</p>
+                                    </div>
+                                </div>
+                                <div class="activity">
+                                    <div class="bullet"></div>
+                                    <div class="details">
+                                        <p>You have uploaded 4 files in the project Office Decoration.</p>
+                                        <div class="file-list">
+                                            <div class="file">
+                                                <div class="extension">XLS</div>
+                                                <div class="name">constractor list.xls</div>
+                                            </div>
+                                            <div class="file">
+                                                <div class="extension">XLS</div>
+                                                <div class="name">constractor list.xls</div>
+                                            </div>
+                                            <div class="file">
+                                                <div class="extension">XLS</div>
+                                                <div class="name">constractor list.xls</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="activity">
+                                    <div class="bullet"></div>
+                                    <div class="details">
+                                        <p>You have deleted a project Office Decoration.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="day-activity">
+                            <div class="date-time">
+                                <div class="date"> <span class="number">25</span><span class="text">Oct</span></div>
+                                <div class="year">2016</div>
+                                <div class="day">Monday</div>
+                            </div>
+                            <div class="activities">
+                                <div class="activity">
+                                    <div class="bullet"></div>
+                                    <div class="details">
+                                        <p>You have created a project Office Decoration.</p>
+                                    </div>
+                                </div>
+                                <div class="activity">
+                                    <div class="bullet"></div>
+                                    <div class="details">
+                                        <p>You have uploaded 4 files in the project Office Decoration.</p>
+                                        <div class="file-list">
+                                            <div class="file">
+                                                <div class="extension">XLS</div>
+                                                <div class="name">constractor list.xls</div>
+                                            </div>
+                                            <div class="file">
+                                                <div class="extension">XLS</div>
+                                                <div class="name">constractor list.xls</div>
+                                            </div>
+                                            <div class="file">
+                                                <div class="extension">XLS</div>
+                                                <div class="name">constractor list.xls</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="activity">
+                                    <div class="bullet"></div>
+                                    <div class="details">
+                                        <p>You have deleted a project Office Decoration.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="day-activity">
+                            <div class="date-time">
+                                <div class="date"> <span class="number">25</span><span class="text">Oct</span></div>
+                                <div class="year">2016</div>
+                                <div class="day">Monday</div>
+                            </div>
+                            <div class="activities">
+                                <div class="activity">
+                                    <div class="bullet"></div>
+                                    <div class="details">
+                                        <p>You have created a project Office Decoration.</p>
+                                    </div>
+                                </div>
+                                <div class="activity">
+                                    <div class="bullet"></div>
+                                    <div class="details">
+                                        <p>You have uploaded 4 files in the project Office Decoration.</p>
+                                        <div class="file-list">
+                                            <div class="file">
+                                                <div class="extension">XLS</div>
+                                                <div class="name">constractor list.xls</div>
+                                            </div>
+                                            <div class="file">
+                                                <div class="extension">XLS</div>
+                                                <div class="name">constractor list.xls</div>
+                                            </div>
+                                            <div class="file">
+                                                <div class="extension">XLS</div>
+                                                <div class="name">constractor list.xls</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="activity">
+                                    <div class="bullet"></div>
+                                    <div class="details">
+                                        <p>You have deleted a project Office Decoration.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </scrollable>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contact-details" ng-if='vm.selectContactDetails && vm.isGroupSelected'>
+        <div class="user-info">
+            <scrollable>
+                <div class="info-header">
+                    <div class="dp">
+                        <img src="./resources/default-group-image.png" class="profile-pic">
+                        <!--  <button class="more-btn"><img src="./resources/more.png"></button> -->
+                        <div class="btn-group  more-btn" uib-dropdown dropdown-append-to-body>
+                            <button id="btn-append-to-body" type="button" class="btn btn-primary" uib-dropdown-toggle>
+                                <img src="./resources/more.png">
+                            </button>
+                             <ul class="dropdown-menu options" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
+                                <li role="menuitem">
+                                    <a xui-sref=''>
+                                        <div>
+                                            <img src="./resources/export.png">
+                                            <p> Export</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li role="menuitem">
+                                    <a href="#" ui-sref='authenticated.layout.contact.thumbnail.editGroup({id:vm.selectContactDetails.PWGroupID})'>
+                                        <div>
+                                            <img src="./resources/edit.png">
+                                            <p> Edit</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li role="menuitem">
+                                    <a href="#">
+                                        <div>
+                                            <img src="./resources/delete2.png">
+                                            <p> Delete</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="name-designation-block">
+                        <p class="name" ng-bind="vm.selectContactDetails.GroupName"></p>
+                    </div>
+                </div>
+                <div class="user-contacts">
+                    <p class="contact-count"><span ng-bind="vm.selectContactDetails.membersCount || 0"></span> Contacts</p>
+                    <p class="add-member">ADD MEMBERS</p>
+                </div>
+                <div class="information">
+                    <div class="info-row">
+                        <label>Company</label>
+                        <p ng-bind='vm.selectContactDetails.CompanyName  ||  vm.notAvailable'>
+                        </p>
+                    </div>
+                    <div class="info-row">
+                        <label>Description</label>
+                        <p ng-bind="vm.selectContactDetails.Notes  ||  vm.notAvailable">
+                        </p>
+                    </div>
+                    <div class="info-row">
+                        <label>Link</label>
+                        <p ng-bind="vm.selectContactDetails.WebURL ||  vm.notAvailable ">
+                        </p>
+                    </div>
+                </div>
+            </scrollable>
+        </div>
+        <div class="members-list">
+            <div class="list-wrapper">
+                <div class="title">
+                    <p class="text">ALL MEMBERS (<span ng-bind='vm.selectContactDetails.membersCount'></span>)</p>
+                    <div class="pull-right double-line">
+                        <div class="field pagination-field">
+                            <ul uib-pagination boundary-links="true" total-items=" vm.selectContactDetails.membersCount" ng-model="vm.pageNo" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" max-size='3' ng-change="vm.pageChanged()" items-per-page="vm.perPageItem.value"></ul>
+                        </div>
+                        <div class="per-page-field field">
+                            <div class="btn-group" uib-dropdown is-open="status.isopenPerPage">
+                                <button id="single-button" type="button" class="btn" uib-dropdown-toggle ng-disabled="disabled">
+                                    <span ng-bind="vm.perPageItem.text"></span> <i class="caret"></i>
+                                </button>
+                                <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button" ng-model='vm.perPageItem'>
+                                    <li role="menuitem" ng-repeat='item in vm.perPageItemList' ng-click="vm.perPageItem=item;vm.changePerPageCount(item)">
+                                        <a href="" ng-bind="item.text"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="vm.selectContactDetails.members.length>0" id="customize-grid" ui-grid="vm.gridOptions" class="file-list-view" ui-grid-resize-columns ui-grid-pinning ui-grid-auto-resize></div>
+            </div>
+        </div>
+    </div>
+</div>

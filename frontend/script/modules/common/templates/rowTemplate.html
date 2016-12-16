@@ -1,0 +1,4 @@
+<div ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid" ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'" class="ui-grid-cell each-cell-container" ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader,'is-selected': row.entity.isSelected }" role="{{col.isRowHeader ? 'rowheader' : 'gridcell'}}" ng-click="grid.appScope.selectFile(row.entity, $index, $event)" context-menu="grid.appScope.fileListMenuOptions(row)" ng-drag="true" ng-drag-data="{data: row.entity, from: 'right', isFile: true}" ng-drag-start="grid.appScope.startDrag(row.entity, $index, $event)" ng-drag-stop="grid.appScope.completeDrag(row.entity, $index)" ng-center-anchor="true">
+    <div class="name-cell-content" ui-grid-cell>
+    </div>
+</div>
